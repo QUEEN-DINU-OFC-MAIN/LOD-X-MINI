@@ -150,7 +150,24 @@ export async function createStorage(cfg, log = console) {
         if (!s.endpoint || !s.bucket || !s.accessKeyId || !s.secretAccessKey)
             throw new Error('R2 config incomplete: need R2_ACCOUNT_ID (or R2_ENDPOINT), R2_BUCKET, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY');
         base = await S3Storage.create(s);
-        log.info?.({ bucket: s.bucket }, 'storage: Cloudflare R2');
+        let epHost = s.endpoint;
+        try {
+            const u = new URL(s.endpoint);
+            epHost = u.host;
+            if (u.protocol !== 'https:') log.error?.({ endpoint: s.endpoint }, 'storage: R2_ENDPOINT must use https://');
+            else if (/^\d{1,3}(\.\d{1,3}){3}$/.test(u.hostname) || u.hostname === 'localhost')
+                log.error?.({ host: u.hostname }, 'storage: R2_ENDPOINT is an IP/localhost – TLS needs the real https hostname (SNI required)');
+        } catch { log.error?.({ endpoint: s.endpoint }, 'storage: R2_ENDPOINT is not a valid URL'); }
+        log.info?.({ bucket: s.bucket, host: epHost }, 'storage: Cloudflare R2');
+        try {
+            await Promise.race([
+                base.list('__ping__/', {}),
+                new Promise((_, rej) => { const t = setTimeout(() => rej(new Error('self-test timeout (8s)')), 8000); t.unref?.(); })
+            ]);
+            log.info?.('storage: R2 self-test OK');
+        } catch (e) {
+            log.error?.({ err: e.message, host: epHost }, 'storage: R2 UNREACHABLE – check R2_ENDPOINT (must be https://<account-id>.r2.cloudflarestorage.com), R2_BUCKET, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY');
+        }
     } else {
         base = new LocalStorage(cfg.storage.localDir);
         log.warn?.({ dir: cfg.storage.localDir }, 'storage: LOCAL folder (dev only – use R2 in production)');

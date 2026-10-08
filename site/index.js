@@ -65,17 +65,23 @@ export async function createSite({ cfg = loadConfig(), storage, log = createLogg
     app.get('/api/config', (_q, r) => r.json({ brand: cfg.site.brand, prefix: cfg.site.prefix }));
 
     let statsCache = { at: 0, v: null };
+    const emptyStats = () => ({ brand: cfg.site.brand, totalSessions: null, workersOnline: 0, connected: 0, reconnecting: 0, dead: 0, starting: 0, backoff: 0, capacity: 0, rssMb: 0, at: Date.now(), stale: true });
     const computeStats = async () => {
         if (Date.now() - statsCache.at > 15_000) {
-            const [beats, total] = await Promise.all([store.listStats(), store.listSessionIds().then((a) => a.length).catch(() => null)]);
-            const fresh = beats.filter((b) => Date.now() - b.at < 120_000);
-            const sum = (f) => fresh.reduce((n, b) => n + (f(b) || 0), 0);
-            statsCache = { at: Date.now(), v: {
-                brand: cfg.site.brand, totalSessions: total, workersOnline: fresh.length,
-                connected: sum((b) => b.states?.open), reconnecting: sum((b) => (b.states?.backoff || 0) + (b.states?.starting || 0)),
-                dead: sum((b) => b.states?.dead), starting: sum((b) => b.states?.starting), backoff: sum((b) => b.states?.backoff),
-                capacity: sum((b) => b.maxSessions), rssMb: sum((b) => b.rssMb), at: Date.now()
-            } };
+            try {
+                const [beats, total] = await Promise.all([store.listStats(), store.listSessionIds().then((a) => a.length).catch(() => null)]);
+                const fresh = beats.filter((b) => Date.now() - b.at < 120_000);
+                const sum = (f) => fresh.reduce((n, b) => n + (f(b) || 0), 0);
+                statsCache = { at: Date.now(), v: {
+                    brand: cfg.site.brand, totalSessions: total, workersOnline: fresh.length,
+                    connected: sum((b) => b.states?.open), reconnecting: sum((b) => (b.states?.backoff || 0) + (b.states?.starting || 0)),
+                    dead: sum((b) => b.states?.dead), starting: sum((b) => b.states?.starting), backoff: sum((b) => b.states?.backoff),
+                    capacity: sum((b) => b.maxSessions), rssMb: sum((b) => b.rssMb), at: Date.now()
+                } };
+            } catch (e) {
+                log.warn?.({ err: e.message }, 'stats compute failed – serving last known');
+                if (!statsCache.v) statsCache = { at: Date.now(), v: emptyStats() };
+            }
         }
         return statsCache.v;
     };

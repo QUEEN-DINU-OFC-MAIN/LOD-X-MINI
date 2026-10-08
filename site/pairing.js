@@ -10,6 +10,7 @@ import { resolveLang } from '../shared/i18n.js';
 import { menuImage } from '../server/lib/ui.js';
 import { selfIdentity, rememberSelfMapping, isLidJid } from '../server/lib/pn.js';
 import { fullFrame, safeImgUrl, fetchImageBuffer } from '../server/lib/dp.js';
+import { ensureWritableDir } from '../shared/config.js';
 import appConfig from '../config.js';
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -44,12 +45,13 @@ export class PairingManager {
         } else if (mode !== 'qr') throw Object.assign(new Error('mode must be pair or qr'), { http: 400 });
 
         const token = crypto.randomBytes(16).toString('hex');
+        const dir = await ensureWritableDir(path.join(this.cfg.dataDir, 'pair', token), this.log);
         const job = {
             token, mode, number: num, status: 'starting', code: null, qr: null, error: null, final: false,
             createdAt: Date.now(), expiresAt: Date.now() + this.cfg.site.pairingTtlMs,
             sock: null, auth: null, reconnects: 0, codeRequested: false, finalizing: false,
             dpUrl: safeImgUrl(dpUrl),
-            dir: path.join(this.cfg.dataDir, 'pair', token)
+            dir
         };
         this.jobs.set(token, job);
         this.#connect(job).catch((e) => this.#fail(job, e));
