@@ -1,5 +1,5 @@
 {
-  "name": "wa-mini-platform",
+  "name": "wa-mini-platfor m",
   "version": "1.0.0",
   "description": "Multi-session WhatsApp mini-bot platform: pairing website + session worker (Cloudflare R2, Heroku-ready, shardable)",
   "type": "module",
