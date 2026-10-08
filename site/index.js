@@ -240,6 +240,11 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     const log = createLogger({ level: cfg.worker.logLevel });
     const { app, pairing } = await createSite({ cfg, log });
     const server = app.listen(cfg.site.port, '0.0.0.0', () => log.info({ port: cfg.site.port }, 'pairing site up'));
+    if (process.env.SELF_PING_URL) {
+        const ping = async () => { try { await fetch(process.env.SELF_PING_URL, { signal: AbortSignal.timeout(8000) }); } catch {} };
+        setInterval(ping, 10 * 60_000).unref();
+        log.info({ url: process.env.SELF_PING_URL }, 'self keep-alive ping enabled');
+    }
     const stop = async () => { log.info('shutting down'); await pairing.shutdown(); server.close(() => process.exit(0)); setTimeout(() => process.exit(0), 8000).unref(); };
     process.on('SIGTERM', stop); process.on('SIGINT', stop);
     process.on('unhandledRejection', (e) => log.error({ err: String(e) }, 'unhandledRejection'));
