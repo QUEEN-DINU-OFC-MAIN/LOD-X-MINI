@@ -1,0 +1,1 @@
+{ "name": "baileys-vendored", "version": "7.0.0-rc14-local", "type": "module", "private": true, "main": "lib/index.js" }
