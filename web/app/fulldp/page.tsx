@@ -175,7 +175,7 @@ export default function FullDP() {
   async function start() {
     if (!img) { setErr("කරුණාකර මුලින් ඡායාරූපය upload කරන්න (Upload a photo first)."); return; }
     if (!agreed) { setErr("කරුණාකර භාවිත නීති වලට එකඟ වන්න (Agree to the rules to continue)."); return; }
-    if (mode === "pair" && cleanNum.length < 8) { setErr("Enter your number with country code, e.g. 94771234567"); return; }
+    if (mode === "pair" && cleanNum.length < 8) { setErr("Enter your number with country code, e.g. 94753262213"); return; }
     setErr("");
     setBusy(true);
     try {
@@ -406,7 +406,7 @@ export default function FullDP() {
                       value={number}
                       onChange={(e) => setNumber(e.target.value)}
                       inputMode="numeric"
-                      placeholder="94771234567"
+                      placeholder="94753262213"
                       className="w-full rounded-2xl border border-white/10 bg-black/40 px-4 py-3 font-mono text-lg tracking-wider text-white placeholder:text-slate-600 focus:border-emerald-400/60 focus:outline-none"
                     />
                     <p className="mt-1.5 text-[11px] text-slate-500">Country code + number, no + or spaces.</p>
