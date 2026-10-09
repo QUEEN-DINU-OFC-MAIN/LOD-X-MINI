@@ -29,7 +29,7 @@ async function whoIs(runner, sock, m) {
 }
 
 async function sendInfo(runner, sock, to, who, head, extra, mentions) {
-    return sock.sendMessage(to, { text: `${head}\n${LINE}\n${extra}\n${LINE}\n_${BOT_NAME} • RCD X MINI_\n> FREE RCD CONNECTED > https://rcdxmini.dexterid.org`, mentions }, {});
+    return sock.sendMessage(to, { text: `${head}\n${LINE}\n${extra}\n${LINE}\n_${BOT_NAME} • LOD X MINI_\n> FREE LOD CONNECTED > https://rcdxmini.dexterid.org`, mentions }, {});
 }
 
 export async function recoverDeleted(runner, sock, stored, byKey) {
@@ -51,7 +51,7 @@ export async function recoverDeleted(runner, sock, stored, byKey) {
             if (d.kind && d.kind !== 'sticker' && d.kind !== 'audio') {
                 const buf = await grab(sock, m, d);
                 if (buf) {
-                    const caption = `${head}\n${LINE}\n${meta}${d.body ? `\n${LINE}\n💭 ${d.body}` : ''}\n${LINE}\n_${BOT_NAME} • RCD X MINI_\n> FREE RCD CONNECTED > https://rcdxmini.dexterid.org`;
+                    const caption = `${head}\n${LINE}\n${meta}${d.body ? `\n${LINE}\n💭 ${d.body}` : ''}\n${LINE}\n_${BOT_NAME} • LOD X MINI_\n> FREE LOD CONNECTED > https://rcdxmini.dexterid.org`;
                     const base = d.kind === 'document' ? { document: buf, mimetype: d.c.documentMessage?.mimetype, fileName: d.c.documentMessage?.fileName || 'file', caption } : { [d.kind]: buf, caption };
                     await sock.sendMessage(to, { ...base, mentions: [mention] });
                     continue;
