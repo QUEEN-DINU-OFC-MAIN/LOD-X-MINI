@@ -4,7 +4,7 @@ import { HelpCircle, BookOpen, ArrowRight } from 'lucide-react';
 
 export const metadata = {
   title: 'FAQ',
-  description: 'Frequently Asked Questions about RCD X MINI WhatsApp companion.'
+  description: 'Frequently Asked Questions about LOD X MINI WhatsApp companion.'
 };
 
 const FAQS = [
@@ -51,7 +51,7 @@ export default function FaqPage() {
           Frequently asked questions
         </h1>
         <p className="mt-1.5 text-xs text-slate-400 sm:text-sm">
-          Quick answers to common questions about connecting and managing your RCD X MINI bot.
+          Quick answers to common questions about connecting and managing your LOD X MINI bot.
         </p>
 
         <Link
