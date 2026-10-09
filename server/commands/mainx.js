@@ -105,11 +105,11 @@ export default [
     { ...owner, name: 'delpp', aliases: ['removepp'], desc: 'Remove your profile photo', react: '🗑️', async run(ctx) { await ctx.sock.removeProfilePicture(ctx.sock.user.id); await ctx.reply('✅ Profile photo removed.'); } },
     {
         ...owner, name: 'block', desc: 'Block a number / replied user', react: '🚫',
-        async run(ctx) { const j = toJid(ctx); if (!j) return ctx.reply(`ℹ️ Usage: ${ctx.prefix}block 94771234567`); await ctx.sock.updateBlockStatus(j, 'block'); await ctx.reply(`🚫 Blocked +${numberOfJid(j)}`); }
+        async run(ctx) { const j = toJid(ctx); if (!j) return ctx.reply(`ℹ️ Usage: ${ctx.prefix}block 94753262213`); await ctx.sock.updateBlockStatus(j, 'block'); await ctx.reply(`🚫 Blocked +${numberOfJid(j)}`); }
     },
     {
         ...owner, name: 'unblock', desc: 'Unblock a number / replied user', react: '✅',
-        async run(ctx) { const j = toJid(ctx); if (!j) return ctx.reply(`ℹ️ Usage: ${ctx.prefix}unblock 94771234567`); await ctx.sock.updateBlockStatus(j, 'unblock'); await ctx.reply(`✅ Unblocked +${numberOfJid(j)}`); }
+        async run(ctx) { const j = toJid(ctx); if (!j) return ctx.reply(`ℹ️ Usage: ${ctx.prefix}unblock 94753262213`); await ctx.sock.updateBlockStatus(j, 'unblock'); await ctx.reply(`✅ Unblocked +${numberOfJid(j)}`); }
     },
     {
         ...owner, name: 'blocklist', aliases: ['blocked'], desc: 'Your blocked numbers', react: '📋',
@@ -121,7 +121,7 @@ export default [
     {
         ownerOnly: true, name: 'statusof', aliases: ['about', 'bioof'], cat: 'privacy', desc: "Read a number's WhatsApp bio  (.statusof 9477…)", react: '📝',
         async run(ctx) {
-            const j = toJid(ctx); if (!j) return ctx.reply(`ℹ️ Usage: ${ctx.prefix}statusof 94771234567`);
+            const j = toJid(ctx); if (!j) return ctx.reply(`ℹ️ Usage: ${ctx.prefix}statusof 94753262213`);
             const r = await ctx.sock.fetchStatus(j).catch(() => null); const s = Array.isArray(r) ? r[0]?.status : r;
             await ctx.reply(s?.status ? `📝 *+${numberOfJid(j)}*\n\n${s.status}\n\n🕒 ${s.setAt ? new Date(s.setAt).toDateString() : ''}` : '❌ No public bio (or it is private).');
         }
@@ -129,7 +129,7 @@ export default [
     {
         ownerOnly: true, name: 'disappearof', aliases: ['dmode'], cat: 'privacy', desc: "A number's disappearing-message setting", react: '⏳',
         async run(ctx) {
-            const j = toJid(ctx); if (!j) return ctx.reply(`ℹ️ Usage: ${ctx.prefix}disappearof 94771234567`);
+            const j = toJid(ctx); if (!j) return ctx.reply(`ℹ️ Usage: ${ctx.prefix}disappearof 94753262213`);
             const r = await ctx.sock.fetchDisappearingDuration(j).catch(() => null); const d = r?.[0]?.disappearingMode?.duration ?? r?.[0]?.duration;
             await ctx.reply(`⏳ +${numberOfJid(j)} : *${d ? `${Math.round(d / 86400)} day(s)` : 'off / unknown'}*`);
         }
@@ -137,7 +137,7 @@ export default [
     {
         ownerOnly: true, name: 'bizinfo', aliases: ['business'], cat: 'privacy', desc: "A WhatsApp Business account's profile", react: '🏢',
         async run(ctx) {
-            const j = toJid(ctx); if (!j) return ctx.reply(`ℹ️ Usage: ${ctx.prefix}bizinfo 94771234567`);
+            const j = toJid(ctx); if (!j) return ctx.reply(`ℹ️ Usage: ${ctx.prefix}bizinfo 94753262213`);
             const b = await ctx.sock.getBusinessProfile(j).catch(() => null);
             if (!b) return ctx.reply('❌ Not a business account.');
             await ctx.reply(`🏢 *Business profile*\n\n▫️ Category : ${b.category || '-'}\n▫️ Email : ${b.email || '-'}\n▫️ Website : ${(b.website || []).join(', ') || '-'}\n▫️ Address : ${b.address || '-'}\n\n${b.description || ''}`);
