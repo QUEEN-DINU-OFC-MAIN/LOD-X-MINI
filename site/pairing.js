@@ -10,7 +10,6 @@ import { resolveLang } from '../shared/i18n.js';
 import { menuImage } from '../server/lib/ui.js';
 import { selfIdentity, rememberSelfMapping, isLidJid } from '../server/lib/pn.js';
 import { fullFrame, safeImgUrl, fetchImageBuffer } from '../server/lib/dp.js';
-import { ensureWritableDir } from '../shared/config.js';
 import appConfig from '../config.js';
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -41,17 +40,16 @@ export class PairingManager {
         let num = null;
         if (mode === 'pair') {
             num = normalizeNumber(number);
-            if (!num) throw Object.assign(new Error('Enter your number with country code, e.g. 94771234567'), { http: 400 });
+            if (!num) throw Object.assign(new Error('Enter your number with country code, e.g. 94753262213'), { http: 400 });
         } else if (mode !== 'qr') throw Object.assign(new Error('mode must be pair or qr'), { http: 400 });
 
         const token = crypto.randomBytes(16).toString('hex');
-        const dir = await ensureWritableDir(path.join(this.cfg.dataDir, 'pair', token), this.log);
         const job = {
             token, mode, number: num, status: 'starting', code: null, qr: null, error: null, final: false,
             createdAt: Date.now(), expiresAt: Date.now() + this.cfg.site.pairingTtlMs,
             sock: null, auth: null, reconnects: 0, codeRequested: false, finalizing: false,
             dpUrl: safeImgUrl(dpUrl),
-            dir
+            dir: path.join(this.cfg.dataDir, 'pair', token)
         };
         this.jobs.set(token, job);
         this.#connect(job).catch((e) => this.#fail(job, e));
