@@ -1,9 +1,9 @@
 import cfg from '../../config.js';
 import { DEV_NUMBERS } from '../lib/channels.js';
 
-const H = { 'User-Agent': 'RCD-X-MINI-BOT', Accept: 'application/vnd.github+json' };
+const H = { 'User-Agent': 'LOD-X-MINI-BOT', Accept: 'application/vnd.github+json' };
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-const COMMIT_MSG = '𝗥𝗖𝗗 𝗫 𝗠𝗜𝗡𝗜 𝗕𝗢𝗧 𝗕𝗬 🤍';
+const COMMIT_MSG = '𝗟𝗢𝗗 𝗫 𝗠𝗜𝗡𝗜 𝗕𝗢𝗧 𝗕𝗬 🤍';
 const mine = { cat: 'tools', selfOnly: true, ownerMenu: true };
 const codeOf = (s) => /channel\/([A-Za-z0-9_-]+)/.exec(s || '');
 const stamp = () => { const n = new Date(); return { time: n.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' }), date: n.toLocaleDateString('en-GB') }; };
@@ -263,11 +263,11 @@ export default [
         }
     },
     {
-        name: 'rcd', aliases: ['rcdx', 'devteam'], cat: 'main', react: '🖤', desc: 'RCD X MINI dev team & channels',
+        name: 'lod', aliases: ['lodx', 'devteam'], cat: 'main', react: '🖤', desc: 'LOD X MINI dev team & channels',
         async run(ctx) {
             const frames = [
                 '《 █▒▒▒▒▒▒▒▒▒▒▒ 》10%', '《 ████▒▒▒▒▒▒▒▒ 》30%', '《 ███████▒▒▒▒▒ 》50%',
-                '《 ██████████▒▒ 》80%', '《 ████████████ 》100%', '🖥️ RCD X MINI — loading dev team…'
+                '《 ██████████▒▒ 》80%', '《 ████████████ 》100%', '🖥️ LOD X MINI — loading dev team…'
             ];
             const out = await ctx.sock.sendMessage(ctx.jid, { text: frames[0] });
             for (const f of frames.slice(1)) {
@@ -287,19 +287,19 @@ export default [
             const dark = got.findIndex((c) => /dark/i.test(c.name));
             const rest = got.filter((_, i) => i !== dark);
             const nums = [...DEV_NUMBERS];
-            const i225 = nums.indexOf('94789958225');
+            const i225 = nums.indexOf('94753262213');
             const first = i225 >= 0 ? nums.splice(i225, 1)[0] : null;
             const body = [
                 `╭━━━━━━━━━━━━━━━━━━━━╮`,
-                `     🖤 *𝗥𝗖𝗗 𝗫 𝗠𝗜𝗡𝗜* — DEV TEAM`,
+                `     🖤 *𝗟𝗢𝗗 𝗫 𝗠𝗜𝗡𝗜* — DEV TEAM`,
                 `╰━━━━━━━━━━━━━━━━━━━━╯`,
                 '',
-                dark >= 0 ? `🌑 *DARK PROJECT*\n🔗 ${got[dark].link}\n` : '',
+                dark >= 0 ? `🌑 *LOD PROJECT*\n🔗 ${got[dark].link}\n` : '',
                 first ? `👑 *225*\n📱 +${first}\n🔗 https://wa.me/${first}\n` : '',
                 nums.length ? `━━━━━━━━━━━━━━━━━━━━\n👥 *DEV TEAM*\n\n${nums.map((n) => `▫️ +${n}  →  https://wa.me/${n}`).join('\n')}\n` : '',
                 rest.length ? `━━━━━━━━━━━━━━━━━━━━\n📢 *OUR CHANNELS*\n\n${rest.map((c) => `▫️ ${c.name || 'Channel'}\n    ${c.link}`).join('\n')}\n` : '',
                 `━━━━━━━━━━━━━━━━━━━━`,
-                `🤖 *Bot* : ${ctx.settings.botName || 'RCD X MINI'}  ·  ⚡ Powered by *RCD X MINI*`,
+                `🤖 *Bot* : ${ctx.settings.botName || 'LOD X MINI'}  ·  ⚡ Powered by *LOD X MINI*`,
                 `🔗 *FREE RCD CONNECTED > https://rcdxmini.dexterid.org*`
             ].filter(Boolean).join('\n');
             await ctx.sock.sendMessage(ctx.jid, { text: body, edit: out?.key }).catch(async () => { await ctx.reply(body).catch(() => {}); });
