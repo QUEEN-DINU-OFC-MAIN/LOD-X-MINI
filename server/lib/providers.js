@@ -261,7 +261,7 @@ const kyioBlocked = (msg) => /percobaan|berbayar|limit|quota|upgrade/i.test(Stri
 export async function kyioAsk(prompt, { timeoutMs = 15_000 } = {}) {
     if (Date.now() < kyio.blockedUntil) throw new Error('kyio quota paused');
     const res = await fetch(`https://api.kyio.web.id/api/v2/ai/gemini?q=${encodeURIComponent(prompt)}`, {
-        signal: AbortSignal.timeout(timeoutMs), headers: { 'User-Agent': 'RCD-X-MINI-BOT', Accept: 'application/json' }
+        signal: AbortSignal.timeout(timeoutMs), headers: { 'User-Agent': 'LOD-X-MINI-BOT', Accept: 'application/json' }
     });
     const j = await res.json().catch(() => null);
     const t = j?.result?.result;
