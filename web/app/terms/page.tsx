@@ -4,7 +4,7 @@ import { FileCheck2, AlertTriangle, MessageCircle } from 'lucide-react';
 
 export const metadata = {
   title: 'Terms & Conditions',
-  description: 'Terms of Use and Fair Usage Rules for RCD X MINI WhatsApp companion.'
+  description: 'Terms of Use and Fair Usage Rules for LOD X MINI WhatsApp companion.'
 };
 
 const TERMS = [
@@ -19,8 +19,8 @@ const TERMS = [
     num: '2',
     enTitle: 'Independent companion service',
     siTitle: 'නිල WhatsApp සේවාවක් නොවේ',
-    en: 'RCD X MINI is an independent service and is not affiliated with WhatsApp or Meta. You must also follow WhatsApp’s own terms of service. WhatsApp may restrict or log out numbers that violate its policies, and we cannot control that.',
-    si: 'RCD X MINI ස්වාධීන සේවාවකි, WhatsApp හෝ Meta සමඟ සම්බන්ධ නැත. ඔබ WhatsApp හි කොන්දේසිද පිළිපැදිය යුතුය. නීති කඩන අංක WhatsApp මඟින් සීමා කිරීම හෝ logout කිරීම සිදු විය හැකි අතර එය අපට පාලනය කළ නොහැක.'
+    en: 'LOD X MINI is an independent service and is not affiliated with WhatsApp or Meta. You must also follow WhatsApp’s own terms of service. WhatsApp may restrict or log out numbers that violate its policies, and we cannot control that.',
+    si: 'LOD X MINI ස්වාධීන සේවාවකි, WhatsApp හෝ Meta සමඟ සම්බන්ධ නැත. ඔබ WhatsApp හි කොන්දේසිද පිළිපැදිය යුතුය. නීති කඩන අංක WhatsApp මඟින් සීමා කිරීම හෝ logout කිරීම සිදු විය හැකි අතර එය අපට පාලනය කළ නොහැක.'
   },
   {
     num: '3',
@@ -70,7 +70,7 @@ export default function TermsPage() {
           Terms &amp; Conditions · භාවිත කොන්දේසි
         </h1>
         <p className="mt-1.5 text-xs text-slate-400 sm:text-sm">
-          Please read these fair-use terms before pairing your WhatsApp number with RCD X MINI.
+          Please read these fair-use terms before pairing your WhatsApp number with LOD X MINI.
         </p>
 
         <div className="mt-4 flex items-start gap-2.5 rounded-2xl border border-amber-500/25 bg-amber-500/10 p-3.5 text-xs text-amber-200">
