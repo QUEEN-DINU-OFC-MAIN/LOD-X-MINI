@@ -1,7 +1,3 @@
-import { promises as fs } from 'node:fs';
-import os from 'node:os';
-import path from 'node:path';
-
 const int = (v, d) => (v === undefined || v === '' || Number.isNaN(Number(v)) ? d : Number(v));
 const bool = (v, d) => (v === undefined || v === '' ? d : ['1', 'true', 'yes', 'on'].includes(String(v).toLowerCase()));
 
@@ -23,7 +19,7 @@ export function loadConfig(env = process.env) {
         encKey: env.SESSION_ENC_KEY || '',
         databaseUrl: env.DATABASE_URL || '',
         requireEnc: bool(env.REQUIRE_ENCRYPTION, env.NODE_ENV === 'production'),
-        dataDir: env.DATA_DIR || path.join(os.tmpdir(), 'wa-data'),
+        dataDir: env.DATA_DIR || '/tmp/wa-data',
 
         site: {
             port: int(env.PORT, 3000),
@@ -58,19 +54,4 @@ export function loadConfig(env = process.env) {
             logLevel: env.LOG_LEVEL || 'info'
         }
     };
-}
-
-export async function ensureWritableDir(dir, log = console) {
-    try {
-        await Promise.race([
-            fs.mkdir(dir, { recursive: true }),
-            new Promise((_, rej) => { const t = setTimeout(() => rej(new Error('mkdir timeout (3s)')), 3000); t.unref?.(); })
-        ]);
-        return dir;
-    } catch (e) {
-        const fb = path.join(os.tmpdir(), 'wa-data', ...String(dir).split(path.sep).filter(Boolean).slice(-2));
-        try { await fs.mkdir(fb, { recursive: true }); } catch {  }
-        log.warn?.({ err: e.message, dir, fallback: fb }, 'data dir not writable – using temp fallback');
-        return fb;
-    }
 }
