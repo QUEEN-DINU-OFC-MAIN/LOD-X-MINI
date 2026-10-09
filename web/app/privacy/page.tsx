@@ -4,7 +4,7 @@ import { ShieldCheck, Lock, EyeOff, Cookie, MessageCircle } from 'lucide-react';
 
 export const metadata = {
   title: 'Privacy Policy',
-  description: 'Privacy Policy and Cookie Policy for RCD X MINI WhatsApp companion.'
+  description: 'Privacy Policy and Cookie Policy for LOD X MINI WhatsApp companion.'
 };
 
 const SECTIONS = [
@@ -12,8 +12,8 @@ const SECTIONS = [
     num: '1',
     enTitle: 'Who we are',
     siTitle: 'අපි කවුද',
-    en: 'RCD X MINI is an independent Sri Lankan WhatsApp mini-bot companion service. It is not affiliated with, endorsed by, or connected to WhatsApp or Meta.',
-    si: 'RCD X MINI කියන්නේ ස්වාධීන developer කෙනෙක් පවත්වාගෙන යන ලාංකික WhatsApp mini-bot සේවාවක්. මෙය WhatsApp හෝ Meta සමාගමට අයත් හෝ සම්බන්ධ සේවාවක් නොවේ.'
+    en: 'LOD X MINI is an independent Sri Lankan WhatsApp mini-bot companion service. It is not affiliated with, endorsed by, or connected to WhatsApp or Meta.',
+    si: 'LOD X MINI කියන්නේ ස්වාධීන developer කෙනෙක් පවත්වාගෙන යන ලාංකික WhatsApp mini-bot සේවාවක්. මෙය WhatsApp හෝ Meta සමාගමට අයත් හෝ සම්බන්ධ සේවාවක් නොවේ.'
   },
   {
     num: '2',
@@ -119,12 +119,12 @@ export default function PrivacyPage() {
           <MessageCircle className="h-4 w-4 text-emerald-400" />
           <span>Questions about privacy? Contact us on WhatsApp:</span>
           <a
-            href="https://wa.me/94789958225"
+            href="https://wa.me/94762793426"
             target="_blank"
             rel="noopener noreferrer"
             className="font-semibold text-emerald-300 hover:underline"
           >
-            +94 78 995 8225
+            +94 76 279 3426
           </a>
         </div>
         <div className="flex gap-3">
