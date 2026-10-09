@@ -2,7 +2,6 @@ import path from 'node:path';
 import { B, waLogger, statusCodeOf, numberOfJid, selfJid, mediaKit } from '../shared/wa.js';
 import { isViewOnce, extractViewOnce, VIEWONCE_MEDIA_KEYS } from '../shared/viewonce.js';
 import { openAuthState } from '../shared/authstate.js';
-import { ensureWritableDir } from '../shared/config.js';
 import { BoundedCache } from '../shared/cache.js';
 import { liveCaption } from '../shared/messages.js';
 import config from '../config.js';
@@ -65,7 +64,7 @@ export class SessionRunner {
         this.stopping = false; this.state = 'starting'; this.startedAt = Date.now();
         try {
             this.auth = await openAuthState(this.id, {
-                store: this.store, dir: await ensureWritableDir(path.join(this.cfg.dataDir, 'sessions', this.id), this.l), autoSync: true, log: this.l,
+                store: this.store, dir: path.join(this.cfg.dataDir, 'sessions', this.id), autoSync: true, log: this.l,
                 credsDebounceMs: this.cfg.worker.credsDebounceMs, keysSyncMinMs: this.cfg.worker.keysSyncMinMs
             });
         } catch (e) {
