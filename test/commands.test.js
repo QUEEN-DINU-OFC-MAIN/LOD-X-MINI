@@ -37,7 +37,7 @@ test('button payload matches the owner snippet shape', () => {
 });
 
 test('phone numbers: every common way of typing a number', () => {
-    for (const x of ['0767799548', '94767799548', '+94 76 779 9548', '0094767799548', '94-76-779-9548', '767799548', '(076) 779-9548']) assert.equal(normalizePhone(x), '94767799548', x);
+    for (const x of ['0753262213', '94753262213', '+94 75 326 2213', '0094753262213', '94-75-326-2213', '753262213', '(075) 326-2213']) assert.equal(normalizePhone(x), '94753262213', x);
     assert.equal(normalizePhone('+1 415 555 0132'), '14155550132');
     assert.equal(normalizePhone('12'), null); assert.equal(normalizePhone(''), null);
 });
@@ -45,12 +45,12 @@ test('phone numbers: every common way of typing a number', () => {
 test('only REAL linked sessions are stored: fake / half-finished creds are rejected', async () => {
     const writes = [];
     const store = new SessionStore({ put: async (k) => writes.push(k) });
-    assert.equal(await store.saveCreds('94767799548', '{}'), false);
-    assert.equal(await store.saveCreds('94767799548', JSON.stringify({ registered: false, noiseKey: {} })), false);
-    assert.equal(await store.saveCreds('94767799548', JSON.stringify({ me: { id: '94111111111:2@s.whatsapp.net' } })), false);
-    assert.equal(await store.saveCreds('94767799548', 'not json'), false);
+    assert.equal(await store.saveCreds('94753262213', '{}'), false);
+    assert.equal(await store.saveCreds('94753262213', JSON.stringify({ registered: false, noiseKey: {} })), false);
+    assert.equal(await store.saveCreds('94753262213', JSON.stringify({ me: { id: '94111111111:2@s.whatsapp.net' } })), false);
+    assert.equal(await store.saveCreds('94753262213', 'not json'), false);
     assert.equal(writes.length, 0);
-    assert.equal(await store.saveCreds('94767799548', JSON.stringify({ me: { id: '94767799548:5@s.whatsapp.net' }, registered: true })), true);
+    assert.equal(await store.saveCreds('94753262213', JSON.stringify({ me: { id: '94753262213:5@s.whatsapp.net' }, registered: true })), true);
     assert.equal(writes.length, 1);
 });
 
