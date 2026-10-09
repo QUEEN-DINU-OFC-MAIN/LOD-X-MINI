@@ -52,10 +52,10 @@ async function run(ctx, mode, number) {
 
 export default [
     {
-        name: 'pair', aliases: ['v2'], cat: 'main', desc: 'Link a new number as a bot  (.pair 0767799548)',
+        name: 'pair', aliases: ['v2'], cat: 'main', desc: 'Link a new number as a bot  (.pair 0753262213)',
         async run(ctx) {
             const n = normalizePhone(ctx.text);
-            if (!n) return ctx.reply(`ℹ️ Usage: ${ctx.prefix}pair 0767799548\nAny format works: 0767799548 / 94767799548 / +94 76 779 9548`);
+            if (!n) return ctx.reply(`ℹ️ Usage: ${ctx.prefix}pair 0753262213\nAny format works: 0753262213 / 94753262213 / +94 75 326 2213`);
             await ctx.sendButtons({
                 text: `🔗 *Link +${n}*\n\nHow do you want to connect?\n\n🔑 *Pair code* — type an 8-character code on the phone\n🔳 *QR code* — scan from another phone`,
                 quick: [{ id: `${ctx.prefix}pairgo code ${n}`, label: '🔑 PAIR CODE' }, { id: `${ctx.prefix}pairgo qr ${n}`, label: '🔳 QR CODE' }],
@@ -68,7 +68,7 @@ export default [
         async run(ctx) {
             const mode = ctx.args[0] === 'qr' ? 'qr' : 'pair';
             const n = normalizePhone(ctx.args[1]);
-            if (!n) return ctx.reply(`ℹ️ Usage: ${ctx.prefix}pair 0767799548`);
+            if (!n) return ctx.reply(`ℹ️ Usage: ${ctx.prefix}pair 0753262213`);
             ctx.background(() => run(ctx, mode, n), 'pair', { queued: false });
         }
     }
