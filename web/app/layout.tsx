@@ -8,11 +8,11 @@ import { LanguageProvider } from '@/lib/site-lang';
 
 export const metadata: Metadata = {
   title: {
-    default: 'RCD X MINI — Free WhatsApp Mini Bot | Sri Lanka',
-    template: '%s | RCD X MINI'
+    default: 'LOD X MINI — Free WhatsApp Mini Bot | Sri Lanka',
+    template: '%s | LOD X MINI'
   },
   description:
-    'RCD X MINI — free Sri Lankan WhatsApp mini bot. Link your number in seconds with QR or pairing code: song & video downloads, AI, status tools, auto reply, channel tools and a rich command menu.',
+    'LOD X MINI — free Sri Lankan WhatsApp mini bot. Link your number in seconds with QR or pairing code: song & video downloads, AI, status tools, auto reply, channel tools and a rich command menu.',
   icons: {
     icon: [
       { url: '/icon.webp', type: 'image/webp' },
