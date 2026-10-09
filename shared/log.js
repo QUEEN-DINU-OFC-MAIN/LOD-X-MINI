@@ -31,20 +31,7 @@ function fmtFields(o, skip) {
     return out.join(' ');
 }
 
-const LOG_RING = [];
-const LOG_RING_MAX = 500;
-const ANSI_RE = /\x1b\[[0-9;]*m/g;
-
-export function getRecentLogs(since = 0) {
-    return LOG_RING.filter((x) => x.t > since).map((x) => x.l);
-}
-
-export function createLogger({ level = 'info', bindings = {}, write = (l) => {
-    const s = String(l);
-    LOG_RING.push({ t: Date.now(), l: s.replace(ANSI_RE, '') });
-    if (LOG_RING.length > LOG_RING_MAX) LOG_RING.shift();
-    process.stdout.write(s + '\n');
-} } = {}) {
+export function createLogger({ level = 'info', bindings = {}, write = (l) => process.stdout.write(l + '\n') } = {}) {
     const min = LEVELS[level] ?? 30;
     const make = (b) => {
         const emit = (lv, a, b2) => {
