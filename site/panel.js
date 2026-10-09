@@ -98,13 +98,6 @@ export function mountPanel(app, { store, log }) {
         res.json(await view(a.number, a.meta));
     });
 
-    app.get('/api/panel/output', async (req, res) => {
-        const a = await auth(req, res); if (!a) return;
-        const since = Number(req.query.since || 0);
-        res.setHeader('Cache-Control', 'no-store');
-        res.json({ ok: true, at: Date.now(), lines: getRecentLogs(since) });
-    });
-
     app.post('/api/panel/upload', express.raw({ type: () => true, limit: MAX_UPLOAD }), async (req, res) => {
         const a = await auth(req, res); if (!a) return;
         try {
