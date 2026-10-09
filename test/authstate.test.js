@@ -27,8 +27,8 @@ async function seedLikeSite(store, id) {
 
 test('restore: creds + Buffers + signal keys survive R2 -> new process', async () => {
     const store = new SessionStore(new LocalStorage(tmp()));
-    const original = await seedLikeSite(store, '94771234567');
-    const a = await openAuthState('94771234567', opts(store, tmp()));
+    const original = await seedLikeSite(store, '94753262213');
+    const a = await openAuthState('94753262213', opts(store, tmp()));
     assert.ok(Buffer.isBuffer(a.state.creds.noiseKey.private));
     assert.deepEqual(a.state.creds.noiseKey.private, original.noiseKey.private);
     assert.equal(a.state.creds.registrationId, original.registrationId);
