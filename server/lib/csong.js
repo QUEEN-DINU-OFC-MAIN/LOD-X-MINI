@@ -1,5 +1,5 @@
-export const DEFAULT_NAME = 'RCD X MINI 💚';
-export const DEFAULT_FOOTER = 'FREE RCD CONNECTED > https://rcdxmini.dexterid.org';
+export const DEFAULT_NAME = 'LOD X MINI 💚';
+export const DEFAULT_FOOTER = 'FREE LOD CONNECTED > https://rcdxmini.dexterid.org';
 
 export const DEFAULT_TEMPLATE = [
     '🎼  ─── ⋆⋅💖⋅⋆ ───  🎶',
