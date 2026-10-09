@@ -18,8 +18,7 @@ import {
   MessageSquareReply,
   ShieldCheck,
   Sparkles,
-  Server,
-  Terminal
+  Server
 } from "lucide-react";
 import Logo from "@/components/Logo";
 import SettingsGroups from "./Settings";
@@ -27,7 +26,6 @@ import StatusVoice from "./StatusVoice";
 import Schedule from "./Schedule";
 import Replies from "./Replies";
 import Access from "./Access";
-import Output from "./Output";
 import type { Api, Me } from "./types";
 
 type Auth = { n: string; k: string; srvId?: string; srvName?: string };
@@ -40,7 +38,6 @@ const TABS = [
   { id: "access", label: "Command Access", Icon: ShieldCheck, groups: [] },
   { id: "schedule", label: "Schedule", Icon: CalendarClock, groups: [] },
   { id: "replies", label: "Auto-Replies", Icon: MessageSquareReply, groups: [] },
-  { id: "output", label: "Output", Icon: Terminal, groups: [] },
 ];
 
 const KEY = "rcd-panel";
@@ -254,7 +251,7 @@ export default function Panel() {
                     inputMode="numeric"
                     value={number}
                     onChange={(e) => setNumber(e.target.value)}
-                    placeholder="94771234567 or 0771234567"
+                    placeholder="94753262213 or 0753262213"
                     className="field !pl-10 font-mono"
                   />
                 </div>
@@ -377,9 +374,7 @@ export default function Panel() {
 
       <div className="mt-4" key={tab}>
         <div className="anim-fade-up">
-          {tab === "output" ? (
-            <Output auth={auth} />
-          ) : tab === "schedule" ? (
+          {tab === "schedule" ? (
             <Schedule me={me} api={api} />
           ) : tab === "replies" ? (
             <Replies me={me} api={api} />
