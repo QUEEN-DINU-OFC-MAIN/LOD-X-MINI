@@ -1,4 +1,4 @@
-const UA = { 'user-agent': 'RCD-X-MINI/1.0 (+whatsapp mini bot)' };
+const UA = { 'user-agent': 'LOD-X-MINI/1.0 (+whatsapp mini bot)' };
 async function req(url, { timeout = 9000, headers, retry = 1 } = {}) {
     let r;
     for (let i = 0; ; i++) {
