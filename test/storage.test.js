@@ -54,14 +54,14 @@ test('Cloudflare R2 code path (S3Storage) against a local S3-compatible server',
 
 test('SessionStore: keys bundle gzip round-trip, deleteSession wipes everything', async () => {
     const st = new SessionStore(new LocalStorage(tmp()));
-    await st.saveCreds('94771234567', '{"x":1}');
-    await st.saveKeysBundle('94771234567', { 'pre-key-1.json': '{"k":1}', 'session-abc.json': '{"s":2}' });
-    await st.saveMeta('94771234567', { welcomed: false });
-    await st.enqueue('94771234567');
-    assert.deepEqual(await st.listSessionIds(), ['94771234567']);
-    assert.deepEqual(await st.listQueue(), ['94771234567']);
-    assert.deepEqual(await st.loadKeysBundle('94771234567'), { 'pre-key-1.json': '{"k":1}', 'session-abc.json': '{"s":2}' });
-    await st.deleteSession('94771234567');
+    await st.saveCreds('94753262213', '{"x":1}');
+    await st.saveKeysBundle('94753262213', { 'pre-key-1.json': '{"k":1}', 'session-abc.json': '{"s":2}' });
+    await st.saveMeta('94753262213', { welcomed: false });
+    await st.enqueue('94753262213');
+    assert.deepEqual(await st.listSessionIds(), ['94753262213']);
+    assert.deepEqual(await st.listQueue(), ['94753262213']);
+    assert.deepEqual(await st.loadKeysBundle('94753262213'), { 'pre-key-1.json': '{"k":1}', 'session-abc.json': '{"s":2}' });
+    await st.deleteSession('94753262213');
     assert.deepEqual(await st.listSessionIds(), []);
     assert.deepEqual(await st.listQueue(), []);
 });
