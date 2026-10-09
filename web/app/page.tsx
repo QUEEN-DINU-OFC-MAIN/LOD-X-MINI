@@ -25,27 +25,16 @@ import {
 
 const TEAM_ADMINS = [
   {
-    name: 'REAL DEXTER DEV',
-    role: 'Lead Developer',
-    img: 'https://i.ibb.co/67H7L6TS/284a980f0551c1e40cf4a1a47734a17d.jpg'
+    name: 'DINU DEV',
+    role: 'Founder & Lead Developer',
+    img: 'https://ibb.co/fcbMGRs'
   },
   {
-    name: 'RAVI TEAM ADMIN',
-    role: 'Core Admin',
-    img: 'https://i.ibb.co/LFCRtVC/IMG-20260924-WA0071.jpg'
-  },
-  {
-    name: 'DORA ADMIN',
-    role: 'Community Admin',
-    img: 'https://i.ibb.co/C5t3qpdQ/IMG-20260924-WA0070.jpg'
-  },
-  {
-    name: 'MR DANA ADMIN',
-    role: 'Support Admin',
-    img: 'https://i.ibb.co/r2HrZj8d/1790270212249.jpg'
+    name: 'SHANUWA ADMIN',
+    role: 'Core Team Admin',
+    img: 'https://ibb.co/Q7BF5910'
   }
 ];
-
 const FEATURE_CATEGORIES = [
   {
     title: 'DOWNLOAD',
@@ -134,7 +123,7 @@ export default function HomePage() {
                   heroArt === 'md' ? 'bg-emerald-400 text-black' : 'text-slate-300 hover:text-white'
                 }`}
               >
-                RCD MD
+                LOD MD
               </button>
               <button
                 type="button"
@@ -150,7 +139,7 @@ export default function HomePage() {
         </div>
 
         <h1 className="relative z-10 mt-5 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
-          <span className="logo-word">RCD X MINI BOT</span>
+          <span className="logo-word">LOD X MINI BOT</span>
         </h1>
         <p className="relative z-10 mx-auto mt-2 max-w-xl text-xs leading-relaxed text-slate-300 sm:text-sm">
           {t('heroSub')}
@@ -185,7 +174,7 @@ export default function HomePage() {
             className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/25 bg-emerald-500/10 px-3.5 py-1 font-mono text-[11px] text-emerald-300/90 backdrop-blur-md transition hover:border-emerald-400/50 hover:text-white"
           >
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-            FREE RCD CONNECTED &gt; https://rcdxmini.dexterid.org
+            FREE LOD CONNECTED &gt; https://rcdxmini.dexterid.org
             <ExternalLink className="h-3 w-3 opacity-75" />
           </a>
         </div>
@@ -224,7 +213,7 @@ export default function HomePage() {
           <div className="mx-auto w-full max-w-[250px] overflow-hidden rounded-2xl border border-white/10 bg-black/50 shadow-xl">
             <img
               src="/rcd-md-banner.webp"
-              alt="RCD MD MINI BOT Emblem"
+              alt="LOD MD MINI BOT Emblem"
               width={500}
               height={500}
               loading="lazy"
