@@ -37,10 +37,10 @@ const base = [
         }
     },
     {
-        name: 'dp', cat: 'search', desc: "A number's profile photo + business info  (.dp 0771234567)",
+        name: 'dp', cat: 'search', desc: "A number's profile photo + business info  (.dp 0753262213)",
         async run(ctx) {
             const n = normalizePhone(ctx.args[0]);
-            if (!n) return ctx.reply(`ℹ️ Usage: ${ctx.prefix}dp 0771234567`);
+            if (!n) return ctx.reply(`ℹ️ Usage: ${ctx.prefix}dp 0753262213`);
             const jid = `${n}@s.whatsapp.net`;
             const [exists] = await ctx.sock.onWhatsApp(jid).catch(() => []);
             if (!exists?.exists) return ctx.reply(`❌ +${n} is not on WhatsApp`);
