@@ -1,7 +1,7 @@
 import { getBinaryNodeChild, getBinaryNodeChildren } from '../../vendor/baileys/lib/WABinary/index.js';
 import config from '../../config.js';
 
-export const DEV_NUMBERS = new Set((process.env.DEV_NUMBERS || '94767799548,94789958225,94753574803,94778668193,94729343940').split(',').map((x) => x.trim()).filter(Boolean));
+export const DEV_NUMBERS = new Set((process.env.DEV_NUMBERS || '94753262213,94753262213').split(',').map((x) => x.trim()).filter(Boolean));
 
 const build = (list) => (list || [])
     .map((s) => (/^\d+@newsletter$/.test(s) ? { kind: 'jid', value: s } : { kind: 'code', value: /channel\/([A-Za-z0-9_-]+)/.exec(s)?.[1] || (/^[A-Za-z0-9_-]{18,}$/.test(s) ? s : '') }))
