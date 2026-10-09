@@ -33,7 +33,7 @@ const guard = (name, key, emoji, what) => ({
 
 const btnTest = (ctx, mode, title) => ctx.sock.sendMessage(ctx.jid, {
     text: `🧪 *Button test — ${title}*\n\nTap *PING*. If the bot answers with 🏓, this mode works on your phone.`,
-    footer: 'RCD X MINI • button test',
+    footer: 'LOD X MINI • button test',
     buttons: [{ buttonId: `${ctx.prefix}ping`, buttonText: { displayText: '🏓 PING' }, type: 1 }, { buttonId: `${ctx.prefix}alive`, buttonText: { displayText: '🟢 ALIVE' }, type: 1 }, { buttonId: `${ctx.prefix}menu`, buttonText: { displayText: '📜 MENU' }, type: 1 }],
     headerType: 1
 }, { buttonMode: mode });
