@@ -183,11 +183,11 @@ export default [
         timeoutMs: 120_000
     },
     {
-        name: 'add', aliases: ['addmember'], cat: 'group', groupOnly: true, desc: 'Add a number to the group  .add 94771234567', react: '➕',
+        name: 'add', aliases: ['addmember'], cat: 'group', groupOnly: true, desc: 'Add a number to the group  .add 947553262213', react: '➕',
         async run(ctx) {
             if (!await guard(ctx)) return;
             const t = targets(ctx).filter((j) => j.endsWith('@s.whatsapp.net'));
-            if (!t.length) return ctx.reply(`ℹ️ Usage: ${ctx.prefix}add 94771234567`);
+            if (!t.length) return ctx.reply(`ℹ️ Usage: ${ctx.prefix}add 94753262213`);
             const r = await ctx.sock.groupParticipantsUpdate(ctx.jid, t, 'add');
             const st = r?.[0]?.status;
             await ctx.reply(st === '200' || st === 200 ? '➕ Added.' : st === '403' ? '📩 Their privacy blocks adding — an invite was needed.' : st === '409' ? 'ℹ️ Already in the group.' : `⚠️ Could not add (status ${st || 'unknown'}).`);
