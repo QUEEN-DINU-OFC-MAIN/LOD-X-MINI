@@ -513,9 +513,9 @@ const GUIDE_STEPS: GuideStep[] = [
           ar: 'حقل رقم واتساب المتصل'
         },
         desc: {
-          en: 'Enter your full number with country code (e.g. 94771234567).',
-          si: 'රටේ කේතය සමඟ ඔබේ සම්පූර්ණ අංකය ඇතුළත් කරන්න (උදා: 94771234567).',
-          ar: 'أدخل رقمك الكامل مع رمز الدولة (مثال: 94771234567).'
+          en: 'Enter your full number with country code (e.g. 94753262213).',
+          si: 'රටේ කේතය සමඟ ඔබේ සම්පූර්ණ අංකය ඇතුළත් කරන්න (උදා: 94753262213).',
+          ar: 'أدخل رقمك الكامل مع رمز الدولة (مثال: 94753262213).'
         }
       },
       {
@@ -752,8 +752,8 @@ const GUIDE_STEPS: GuideStep[] = [
           ar: 'أبرز مميزات المنصة واعتمادية الخوادم'
         },
         desc: {
-          en: 'Overview of why thousands of users rely on RCD X MINI every day.',
-          si: 'RCD X MINI සේවාවේ වේගය සහ විශ්වසනීයත්වය පිළිබඳ විස්තර.',
+          en: 'Overview of why thousands of users rely on LOD X MINI every day.',
+          si: 'LOD X MINI සේවාවේ වේගය සහ විශ්වසනීයත්වය පිළිබඳ විස්තර.',
           ar: 'نظرة شاملة على سرعة واستقرار المنصة.'
         }
       },
