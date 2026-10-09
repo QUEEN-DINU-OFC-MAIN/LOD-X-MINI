@@ -4,29 +4,19 @@ import { MessageCircle, ArrowRight, ShieldCheck, Zap, Sparkles } from 'lucide-re
 
 export const metadata = {
   title: 'About',
-  description: 'About RCD X MINI and the DEXTER MODZ team.'
+  description: 'About LOD X MINI and the LOD TECH team.'
 };
 
 const ADMINS = [
   {
-    name: 'REAL DEXTER DEV',
+    name: 'DINU DEV',
     role: 'Founder & Lead Developer',
-    img: 'https://i.ibb.co/67H7L6TS/284a980f0551c1e40cf4a1a47734a17d.jpg'
+    img: 'https://ibb.co/fcbMGRs'
   },
   {
-    name: 'RAVI TEAM ADMIN',
+    name: 'SHANUWA ADMIN',
     role: 'Core Team Admin',
-    img: 'https://i.ibb.co/LFCRtVC/IMG-20260924-WA0071.jpg'
-  },
-  {
-    name: 'DORA ADMIN',
-    role: 'Community Admin',
-    img: 'https://i.ibb.co/C5t3qpdQ/IMG-20260924-WA0070.jpg'
-  },
-  {
-    name: 'MR DANA ADMIN',
-    role: 'Support Admin',
-    img: 'https://i.ibb.co/r2HrZj8d/1790270212249.jpg'
+    img: 'https://ibb.co/Q7BF5910'
   }
 ];
 
@@ -37,8 +27,8 @@ export default function AboutPage() {
         <div className="grid items-center gap-6 md:grid-cols-[240px_1fr]">
           <div className="mx-auto w-full max-w-[220px] overflow-hidden rounded-2xl border border-white/10 bg-black/40 shadow-xl">
             <img
-              src="/rcd-md-banner.webp"
-              alt="RCD X MINI Emblem"
+              src="/lod-md-banner.webp"
+              alt="LOD X MINI Emblem"
               width={440}
               height={440}
               className="aspect-square w-full object-cover"
@@ -46,7 +36,7 @@ export default function AboutPage() {
           </div>
           <div>
             <h1 className="text-2xl font-extrabold tracking-tight text-white sm:text-3xl">
-              About <span className="logo-word">RCD X MINI</span>
+              About <span className="logo-word">LOD X MINI</span>
             </h1>
             <p className="mt-2 text-xs leading-relaxed text-slate-300 sm:text-sm">
               A proudly Sri Lankan WhatsApp multi-bot platform — pair your number in seconds, enjoy a rich command menu, and manage all your bot preferences from one place.
@@ -56,10 +46,10 @@ export default function AboutPage() {
                 <div className="text-[10px] font-bold uppercase tracking-widest text-slate-400">
                   Developer
                 </div>
-                <div className="text-sm font-extrabold text-emerald-300">DEXTER</div>
+                <div className="text-sm font-extrabold text-emerald-300">DINU</div>
               </div>
               <a
-                href="https://wa.me/94789958225"
+                href="https://wa.me/94762793426"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-shine inline-flex items-center gap-2 rounded-2xl px-5 py-2.5 text-xs font-bold text-black"
