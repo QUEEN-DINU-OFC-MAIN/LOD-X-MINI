@@ -15,7 +15,7 @@ test('menu command output -> valid interactive proto (image header, NOT view-onc
         menuImage: () => menuImage('pink'), runner: { uptime: () => '0d 0h 1m 0s' }, platform: { commands: cmds },
         sendButtons: async (o) => {
             const { buildButtons: bb } = await import('../server/lib/ui.js');
-            sent = { buttons: bb({ prefix: '.', ...o }), headerType: 1, image: o.image, caption: `RCD X MINI LIST MENU\n\n${o.text}`, footer: o.footer };
+            sent = { buttons: bb({ prefix: '.', ...o }), headerType: 1, image: o.image, caption: `LOD X MINI LIST MENU\n\n${o.text}`, footer: o.footer };
         }
     };
     await cmds.get('menu').run(ctx);
@@ -28,13 +28,13 @@ test('menu command output -> valid interactive proto (image header, NOT view-onc
     assert.deepEqual(names, ['quick_reply', 'quick_reply', 'single_select', 'cta_url']);
     const sel = JSON.parse(im.nativeFlowMessage.buttons[2].buttonParamsJson);
     assert.equal(sel.title, 'Click Here ❏');
-    assert.ok(sel.sections.length >= 1 && sel.sections.length <= 10); assert.equal(sel.sections[0].title, 'RCD X MINI FREE BOT'); assert.ok(sel.sections.flatMap((x) => x.rows).length >= 11); assert.ok(sel.sections.every((x) => x.rows.length <= 10));
+    assert.ok(sel.sections.length >= 1 && sel.sections.length <= 10); assert.equal(sel.sections[0].title, 'LOD X MINI FREE BOT'); assert.ok(sel.sections.flatMap((x) => x.rows).length >= 11); assert.ok(sel.sections.every((x) => x.rows.length <= 10));
     const bytes = B.proto.Message.encode(msg).finish().length;
     assert.ok(bytes < 12_000, `proto too large: ${bytes}`);
 });
 
 test('copy + quick buttons for the pair code message', async () => {
-    const b = buildButtons({ prefix: '.', quick: [{ id: '.pair 94767799548', label: 'NEW CODE' }], copy: [{ label: '📋 COPY CODE', code: 'ABCD1234' }] });
+    const b = buildButtons({ prefix: '.', quick: [{ id: '.pair 94753262213', label: 'NEW CODE' }], copy: [{ label: '📋 COPY CODE', code: 'ABCD1234' }] });
     const msg = await B.generateWAMessageContent({ buttons: b, headerType: 1, text: 'code', footer: 'f' }, { upload });
     const btns = msg.interactiveMessage.nativeFlowMessage.buttons;
     assert.deepEqual(btns.map((x) => x.name), ['quick_reply', 'cta_copy', 'cta_url']);
