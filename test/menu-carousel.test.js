@@ -10,7 +10,7 @@ const upload = async () => ({ mediaUrl: 'https://mmg.whatsapp.net/x', directPath
 
 const mkCtx = (cmds) => ({
     prefix: '.', args: [], text: '', isSelf: false, sender: '9471@s.whatsapp.net',
-    settings: { prefix: '.', mode: 'public', botName: 'RCD X MINI', menuStyle: 'carousel' },
+    settings: { prefix: '.', mode: 'public', botName: 'LOD X MINI', menuStyle: 'carousel' },
     msg: { pushName: 'Tester', messageTimestamp: Math.floor(Date.now() / 1000) },
     runner: { uptime: () => '0d 0h 1m 0s' },
     platform: { commands: cmds },
