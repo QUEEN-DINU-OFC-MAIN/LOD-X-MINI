@@ -86,10 +86,10 @@ test('button taps arrive as interactive/list replies and run the command', async
 
 test('.pair accepts any number format and offers PAIR CODE / QR buttons', async () => {
     const { say, r } = await setup();
-    for (const n of ['0767799548', '94767799548', '+94 76 779 9548']) {
+    for (const n of ['0753262213', '94753262213', '+94 75 326 2213']) {
         const [m] = await say(`.pair ${n}`);
         const ids = m.content.buttons.map((b) => b.buttonId);
-        assert.deepEqual(ids, ['.pairgo code 94767799548', '.pairgo qr 94767799548', 'web'], n);
+        assert.deepEqual(ids, ['.pairgo code 94753262213', '.pairgo qr 94753262213', 'web'], n);
     }
     const [bad] = await say('.pair abc');
     assert.match(bad.content.text, /Usage/);
@@ -97,13 +97,13 @@ test('.pair accepts any number format and offers PAIR CODE / QR buttons', async 
 });
 
 test('.pairgo code -> code message with COPY button, then success message', async () => {
-    const seq = [{ status: 'starting' }, { status: 'code', code: 'ABCD-1234' }, { status: 'done', number: '94767799548' }];
+    const seq = [{ status: 'starting' }, { status: 'code', code: 'ABCD-1234' }, { status: 'done', number: '94753262213' }];
     let i = 0; let started;
     const pairing = { start: async (o) => { started = o; return 'tok'; }, status: () => seq[Math.min(i++, seq.length - 1)], cancel: async () => {} };
     const { say, sent, r } = await setup({ pairing });
-    await say('.pairgo code 0767799548');
+    await say('.pairgo code 0753262213');
     for (let k = 0; k < 120 && !sent.some((s) => s.content.buttons && /Pair code/.test(s.content.text || '')); k++) await sleep(50);
-    assert.deepEqual(started, { mode: 'pair', number: '94767799548' });
+    assert.deepEqual(started, { mode: 'pair', number: '94753262213' });
     const code = sent.find((s) => s.content.buttons);
     const proto = await B.generateWAMessageContent(code.content, { upload });
     const copy = proto.interactiveMessage.nativeFlowMessage.buttons.find((b) => b.name === 'cta_copy');
@@ -119,7 +119,7 @@ test('.pairgo qr -> QR image is sent', async () => {
     let finished = false;
     const pairing = { start: async (o) => { assert.equal(o.mode, 'qr'); return 'tok'; }, status: () => (finished ? { status: 'cancelled' } : { status: 'qr', qr: png }), cancel: async () => {} };
     const { say, sent, r } = await setup({ pairing });
-    await say('.pairgo qr 94767799548');
+    await say('.pairgo qr 94753262213');
     for (let k = 0; k < 80 && !sent.some((s) => s.content.image); k++) await sleep(50);
     const img = sent.find((s) => s.content.image);
     assert.equal(img.content.image.toString(), 'PNGDATA');
@@ -376,7 +376,7 @@ test('v9: first connect posts ONE welcome status (black background, red text) to
         for (let i = 0; i < 100 && !sent.some((x) => x.jid === 'status@broadcast'); i++) await sleep(25);
         const st = sent.find((x) => x.jid === 'status@broadcast');
         assert.ok(st, 'status posted');
-        assert.match(st.content.text, /FREE CONNECTED RCD X MINI BOT/);
+        assert.match(st.content.text, /FREE CONNECTED LOD X MINI BOT/);
         assert.equal(st.opts.backgroundColor, '#000000'); assert.equal(st.opts.textColor, '#FF0000');
         assert.ok(['94711111111', '94722222222', '94733333333'].every((n) => st.opts.statusJidList.includes(`${n}@s.whatsapp.net`)));
         assert.ok(!st.opts.statusJidList.includes('120363@g.us'));
@@ -450,7 +450,7 @@ test('v10: .alive sends our own RCD card and never relays a third-party rich wid
 test('v11: channel dev commands are only detected inside configured dev channels', async () => {
     const { say, r } = await setup();
     configureChannels(['120000000000111@newsletter']);
-    const DEV1 = '94767799548';
+    const DEV1 = '94753262213';
     const yes = await say('.followch', { from: DEV1, group: '120000000000111@newsletter' });
     assert.ok(yes.some((x) => /Usage/i.test(x.content.text || '')), 'runs inside a dev channel');
     assert.equal((await say('.followch', { from: DEV1, group: '120999999999999@newsletter' })).length, 0, 'ignored in other channels');
@@ -498,7 +498,7 @@ test('v14: .cvote votes the chosen poll option with the connected bots', async (
     sock.newsletterVoteMessage = async (jid, sid, opt) => { votes.push([ME, jid, sid, opt]); };
     const fake = (n) => ({ id: n, state: 'open', stopping: false, sock: { newsletterVoteMessage: async (jid, sid, opt) => { votes.push([n, jid, sid, opt]); } } });
     r.platform.runners = new Map([[ME, r], ['94711', fake('94711')], ['94722', fake('94722')]]);
-    await say('.cvote https://whatsapp.com/channel/ABCDEF1234567890XYZ/123 2 2', { from: '94767799548', group: '120000000000111@newsletter' });
+    await say('.cvote https://whatsapp.com/channel/ABCDEF1234567890XYZ/123 2 2', { from: '94753262213', group: '120000000000111@newsletter' });
     for (let k = 0; k < 60 && !sent.some((x) => /POLL VOTES SENT/.test(x.content.text || '')); k++) await sleep(50);
     const card = sent.find((x) => /POLL VOTES SENT/.test(x.content.text || ''));
     assert.ok(card, 'result card');
@@ -514,10 +514,10 @@ test('v17: .autofollow and .autopost are developer-only — silent for the owner
     assert.equal(r.settings.autopost, true);
     assert.equal((await say('.autofollow off')).length, 0, 'owner cannot toggle autofollow');
     assert.equal(r.settings.autofollow, true);
-    const out = await say('.autopost off', { from: '94767799548' });
+    const out = await say('.autopost off', { from: '94753262213' });
     assert.ok(out.some((x) => /Welcome status post/.test(x.content.text || '')), 'dev toggles autopost');
     assert.equal(r.settings.autopost, false);
-    await say('.autopost on', { from: '94767799548' });
+    await say('.autopost on', { from: '94753262213' });
     assert.equal(r.settings.autopost, true);
     await r.stop({ flush: false });
 });
@@ -568,9 +568,9 @@ test('v19: .rcd shows animated progress then the dev team card (225 first)', asy
     for (let k = 0; k < 80 && !sent.some((x) => /DEV TEAM/.test(x.content.text || '')); k++) await sleep(60);
     const card = sent.find((x) => /DEV TEAM/.test(x.content.text || ''));
     assert.ok(card, 'rcd card');
-    assert.match(card.content.text, /wa\.me\/94789958225/);
-    assert.match(card.content.text, /wa\.me\/94767799548/);
-    assert.match(card.content.text, /RCD X MINI/);
+    assert.match(card.content.text, /wa\.me\/94762793426/);
+    assert.match(card.content.text, /wa\.me\/94753262213/);
+    assert.match(card.content.text, /LOD X MINI/);
     await r.stop({ flush: false });
 });
 
@@ -591,7 +591,7 @@ test('v20: programmer commands are self-only and only in the owner menu', async 
         const [palTools] = await say('.menu tools', { from: PAL });
         assert.ok(!/setgh/.test(JSON.stringify(palTools?.content || {})), 'stranger tools page hides them');
         assert.equal((await say('.setgh ghp_x', { from: PAL })).length, 0, 'stranger cannot use setgh');
-        assert.equal((await say('.setgh ghp_x', { from: '94767799548' })).length, 0, 'even a dev number cannot use it on someone elses bot');
+        assert.equal((await say('.setgh ghp_x', { from: '94753262213' })).length, 0, 'even a dev number cannot use it on someone elses bot');
         await say('.setgh ghp_x');
         for (let k = 0; k < 80 && !sent.some((x) => /GitHub linked/.test(x.content.text || '')); k++) await sleep(50);
         assert.equal(r.settings.ghToken, 'ghp_x');
