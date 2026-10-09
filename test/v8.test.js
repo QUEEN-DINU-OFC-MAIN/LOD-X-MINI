@@ -18,10 +18,10 @@ test('i18n: country code -> language, manual overrides, English always possible'
     assert.equal(langFromNumber('+91 99999 99999'), 'hi');
     assert.equal(langFromNumber('971500000000'), 'ar');
     assert.equal(langFromNumber('15551234567'), 'en');
-    assert.equal(resolveLang('auto', '94771234567'), 'si');
-    assert.equal(resolveLang('en', '94771234567'), 'en');
-    assert.equal(resolveLang('de', '94771234567'), 'de');
-    assert.equal(resolveLang('zz', '94771234567'), 'si');
+    assert.equal(resolveLang('auto', '94753262213'), 'si');
+    assert.equal(resolveLang('en', '94753262213'), 'en');
+    assert.equal(resolveLang('de', '94753262213'), 'de');
+    assert.equal(resolveLang('zz', '94753262213'), 'si');
 });
 
 test('i18n: only plain phrases are translated – commands, links, code, names, user args, brands are protected', () => {
