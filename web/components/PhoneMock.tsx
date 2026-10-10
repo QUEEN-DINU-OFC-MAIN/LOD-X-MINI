@@ -5,8 +5,8 @@ import { Globe2, ListTree, Radio, UserRound, Check, ShieldCheck, Zap, Sparkles }
 import Logo from "@/components/Logo";
 
 const LANGS = [
-  { code: "si", name: "සිංහල", hi: "ආයුබෝවන්!", line: "ඔබේ RCD X MINI bot සූදානම්!", btn: "මෙනුව විවෘත කරන්න" },
-  { code: "en", name: "English", hi: "Hello!", line: "Your RCD X MINI bot is ready!", btn: "Open Command Menu" },
+  { code: "si", name: "සිංහල", hi: "ආයුබෝවන්!", line: "ඔබේ LOD X MINI bot සූදානම්!", btn: "මෙනුව විවෘත කරන්න" },
+  { code: "en", name: "English", hi: "Hello!", line: "Your LOD X MINI bot is ready!", btn: "Open Command Menu" },
   { code: "ta", name: "தமிழ்", hi: "வணக்கம்!", line: "உங்கள் bot தயார்!", btn: "மெனுவைத் திற" },
   { code: "hi", name: "हिन्दी", hi: "नमस्ते!", line: "आपका bot तैयार है!", btn: "मेनू खोलें" },
   { code: "ar", name: "العربية", hi: "مرحباً!", line: "البوت جاهز للعمل!", btn: "افتح القائمة" },
@@ -59,7 +59,7 @@ export default function PhoneMock({ className = "" }: { className?: string }) {
             <Logo size={32} withWordmark={false} />
             <div className="min-w-0 leading-tight text-left">
               <div className="flex items-center gap-1 truncate text-[13px] font-bold text-white">
-                RCD X MINI
+                LOD X MINI
                 <Sparkles className="h-3 w-3 text-emerald-400" />
               </div>
               <div className="flex items-center gap-1 text-[10px] font-medium text-emerald-300">
@@ -83,17 +83,17 @@ export default function PhoneMock({ className = "" }: { className?: string }) {
               className="bubble w-[92%] overflow-hidden rounded-2xl rounded-tl-sm border border-white/[0.07] bg-[#1f2c34] text-white shadow-lg"
               style={{ animationDelay: ".7s" }}
             >
-              <Image src="/logos/green.jpg" alt="RCD X MINI" width={320} height={240} className="aspect-[16/10] w-full object-cover" />
+              <Image src="/logos/green.jpg" alt="LOD X MINI" width={320} height={240} className="aspect-[16/10] w-full object-cover" />
               <div className="px-3 py-2.5 text-[12px] leading-snug" key={`c${L.code}`}>
                 <div className="flex items-center justify-between font-extrabold text-emerald-300">
-                  <span>RCD X MINI LIST MENU</span>
+                  <span>LOD X MINI LIST MENU</span>
                   <span className="rounded bg-emerald-500/15 px-1.5 py-0.5 text-[9px] text-emerald-200">200+ CMDS</span>
                 </div>
                 <div className="tick-word mt-1 font-medium text-slate-100">
                   {L.hi} {L.line}
                 </div>
                 <div className="mt-1.5 font-mono text-[9.5px] text-emerald-400/90">
-                  &gt; RCD X MD • FREE RCD CONNECTED &gt; https://rcdxmini.dexterid.org
+                  &gt; LOD X MD • FREE LOD CONNECTED &gt; https://rcdxmini.dexterid.org
                 </div>
               </div>
               <div
