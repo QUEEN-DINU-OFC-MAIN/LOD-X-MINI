@@ -249,7 +249,7 @@ export default function AdminOverviewPage() {
             </p>
           ) : null}
           <p className="mt-3 font-mono text-[10px] text-slate-500">
-            default key: <span className="text-slate-400">dexter7739</span> · change with ADMIN_KEY env
+            default key: <span className="text-slate-400">dinu7799</span> · change with ADMIN_KEY env
           </p>
         </div>
       </div>
@@ -669,7 +669,7 @@ export default function AdminOverviewPage() {
       )}
 
       <p className="pb-2 text-center font-mono text-[10px] text-slate-500">
-        /dexter7739 · admin only · data is aggregated from every server in server.js
+        /dinu7799 · admin only · data is aggregated from every server in server.js
       </p>
     </div>
   );
