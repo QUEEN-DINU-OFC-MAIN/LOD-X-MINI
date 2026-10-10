@@ -1,0 +1,14 @@
+node_modules
+.env
+.local-r2
+.local-data
+*.log
+/.vercel
+/.next
+/public
+web/.next
+web/node_modules
+web/tsconfig.tsbuildinfo
+web/next-env.d.ts
+.env*
+!.env.example
