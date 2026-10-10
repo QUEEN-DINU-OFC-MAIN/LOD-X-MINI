@@ -109,7 +109,7 @@ export default function HomePage() {
           <div className="relative w-full overflow-hidden rounded-3xl border border-white/10 bg-black/50 shadow-2xl shadow-emerald-950/60">
             <img
               src={heroArt === 'md' ? '/rcd-md-banner.webp' : '/rcd-hero-3d.webp'}
-              alt="RCD X MINI Bot"
+              alt="LOD X MINI Bot"
               width={720}
               height={540}
               fetchPriority="high"
