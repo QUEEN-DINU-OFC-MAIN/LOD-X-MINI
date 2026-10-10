@@ -1,0 +1,15 @@
+import { spawn } from 'node:child_process';
+import fs from 'node:fs';
+import { LocalStorage } from '../shared/storage.js';
+import { SessionStore } from '../shared/session-store.js';
+import { B } from '../shared/wa.js';
+fs.rmSync('/tmp/e2e-r2', { recursive: true, force: true });
+const store = new SessionStore(new LocalStorage('/tmp/e2e-r2'));
+const creds = B.initAuthCreds(); creds.registered = true; creds.me = { id: '94700000001:1@s.whatsapp.net', name: 'x' };
+await store.saveCreds('94700000001', JSON.stringify(creds, B.BufferJSON.replacer));
+await store.saveMeta('94700000001', { welcomed: true });
+const p = spawn('node', ['server/index.js'], { env: { ...process.env, STORAGE_DRIVER: 'local', LOCAL_STORAGE_DIR: '/tmp/e2e-r2', DATA_DIR: '/tmp/e2e-data', START_DELAY_MS: '100', STATS_SEC: '5', QUEUE_POLL_SEC: '2' } });
+p.stdout.on('data', (d) => process.stdout.write(d)); p.stderr.on('data', (d) => process.stdout.write(d));
+await new Promise((r) => setTimeout(r, 25000));
+console.log('\n--- storage after 25s: sessions =', JSON.stringify(await store.listSessionIds()));
+p.kill('SIGTERM'); await new Promise((r) => p.on('exit', r)); console.log('worker exited cleanly on SIGTERM, code', p.exitCode);
