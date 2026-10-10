@@ -20,7 +20,7 @@ async function imgCarousel(ctx, results, q) {
     const content = {
         viewOnceMessage: { message: { interactiveMessage: IP.create({
             body: IP.Body.create({ text: `🖼️ *IMAGE — ${results.length} results for “${q}”*\n\n👉 Swipe the photos.` }),
-            footer: IP.Footer.create({ text: 'RCD X MINI • IMAGE SEARCH' }),
+            footer: IP.Footer.create({ text: 'LOD X MINI • IMAGE SEARCH' }),
             carouselMessage: IP.CarouselMessage.create({ cards, messageVersion: 1 })
         }) } }
     };
