@@ -14,10 +14,10 @@ export default function ConnectedPreview() {
         </div>
 
         <div className="overflow-hidden rounded-2xl rounded-tl-sm border border-white/10 bg-[#1f2c34] text-white shadow-xl">
-          <Image src="/logos/blue.jpg" alt="RCD X MINI Connected" width={360} height={260} className="aspect-[16/10] w-full object-cover" />
+          <Image src="/logos/blue.jpg" alt="LOD X MINI Connected" width={360} height={260} className="aspect-[16/10] w-full object-cover" />
           <div className="space-y-2 px-3.5 py-3 text-[12.5px] leading-snug">
             <div className="flex items-center gap-1.5 font-extrabold text-emerald-300">
-              <CheckCircle2 className="h-4 w-4 text-emerald-400" /> RCD X MINI — Connected!
+              <CheckCircle2 className="h-4 w-4 text-emerald-400" /> LOD X MINI — Connected!
             </div>
             <div className="text-slate-200">
               Your WhatsApp number is linked and your personal cloud bot is ready.
@@ -37,7 +37,7 @@ export default function ConnectedPreview() {
             </div>
 
             <div className="rounded-lg border border-white/[0.06] bg-black/25 px-2.5 py-1.5 font-mono text-[10px] text-emerald-300">
-              &gt; RCD X MD • FREE RCD CONNECTED &gt; https://rcdxmini.dexterid.org
+              &gt; LOD X MD • FREE LOD CONNECTED &gt; https://rcdxmini.dexterid.org
             </div>
           </div>
         </div>
@@ -47,9 +47,9 @@ export default function ConnectedPreview() {
             <Radio className="h-3 w-3" /> Auto Welcome Status Post
           </div>
           <div className="mt-1.5 rounded-xl bg-black px-3 py-2.5 font-mono text-[11px] font-bold leading-relaxed text-emerald-300 ring-1 ring-emerald-500/25">
-            FREE CONNECTED RCD X MINI BOT
+            FREE CONNECTED LOD X MINI BOT
             <br />
-            <span className="text-cyan-300">FREE RCD CONNECTED &gt; https://rcdxmini.dexterid.org</span>
+            <span className="text-cyan-300">FREE LOD CONNECTED &gt; https://rcdxmini.dexterid.org</span>
           </div>
         </div>
       </div>
@@ -60,7 +60,7 @@ export default function ConnectedPreview() {
         rel="noopener noreferrer"
         className="glass-card flex items-center justify-between rounded-2xl px-4 py-2.5 text-xs font-semibold text-slate-300 hover:text-white"
       >
-        <span className="font-mono text-[11px] text-emerald-300">FREE RCD CONNECTED &gt; rcdxmini.dexterid.org</span>
+        <span className="font-mono text-[11px] text-emerald-300">FREE LOD CONNECTED &gt; rcdxmini.dexterid.org</span>
         <ExternalLink className="h-3.5 w-3.5 text-cyan-300" />
       </a>
     </div>
