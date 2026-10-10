@@ -16,7 +16,7 @@ export default function LogoCarousel() {
         <Image
           key={n}
           src={`/logos/${n}.jpg`}
-          alt={`RCD X MINI logo (${n})`}
+          alt={`LOD X MINI logo (${n})`}
           fill
           sizes="(max-width: 768px) 80vw, 384px"
           priority={k === 0}
