@@ -10,7 +10,7 @@ export default function Logo({
   const mark = (
     <img
       src="/icon.webp"
-      alt="RCD X MINI"
+      alt="LOD X MINI"
       width={size}
       height={size}
       className="logo-mark shrink-0 rounded-xl border border-emerald-400/35 object-cover shadow-[0_0_16px_-4px_rgba(16,185,129,0.5)]"
