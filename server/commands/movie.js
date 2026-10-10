@@ -39,7 +39,7 @@ async function resultsCarousel(ctx, results) {
     const content = {
         viewOnceMessage: { message: { interactiveMessage: P.create({
             body: P.Body.create({ text: `🎬 *CINESUBZ — ${results.length} result(s)*\n\n👉 Swipe a poster, tap ⬇️ DOWNLOAD.` }),
-            footer: P.Footer.create({ text: 'RCD X MINI • CINESUBZ' }),
+            footer: P.Footer.create({ text: 'LOD X MINI • CINESUBZ' }),
             carouselMessage: P.CarouselMessage.create({ cards, messageVersion: 1 })
         }) } }
     };
