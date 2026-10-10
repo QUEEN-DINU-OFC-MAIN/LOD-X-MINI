@@ -15,17 +15,17 @@ export default function Footer() {
             <div className="flex items-center gap-3">
               <img
                 src="/icon.webp"
-                alt="RCD X MINI"
+                alt="LOD X MINI"
                 width={48}
                 height={48}
                 className="h-12 w-12 shrink-0 rounded-2xl border border-emerald-400/35 object-cover shadow-[0_0_24px_-4px_rgba(16,185,129,0.5)]"
               />
               <div>
                 <span className="logo-word text-base font-extrabold tracking-[0.14em] text-white">
-                  RCD X MINI
+                  LOD X MINI
                 </span>
                 <p className="text-[10px] font-bold tracking-[0.28em] text-emerald-400/90">
-                  DEXTER MODZ PLATFORM
+                  LOD MODZ PLATFORM
                 </p>
               </div>
             </div>
@@ -107,12 +107,12 @@ export default function Footer() {
           <div className="flex items-center gap-2">
             <img
               src="/icon.webp"
-              alt="RCD X MINI"
+              alt="LOD X MINI"
               width={20}
               height={20}
               className="h-5 w-5 rounded-md border border-emerald-400/30 object-cover"
             />
-            <p>© {new Date().getFullYear()} RCD X MINI · Your everyday WhatsApp companion</p>
+            <p>© {new Date().getFullYear()} LOD X MINI · Your everyday WhatsApp companion</p>
           </div>
           <div className="flex flex-wrap justify-center gap-4">
             <Link href="/about" className="hover:text-white transition">{t('navAbout')}</Link>
