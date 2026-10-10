@@ -1,6 +1,6 @@
 # WA Mini Platform
 
-Pairing website  +   multi-session worker.  Cloudflare R2 = source of truth. Heroku-ready. Shardable.
+Pairing website  +    multi-session worker.  Cloudflare R2 = source of truth. Heroku-ready. Shardable.
 
 ```
  User ──► SITE (own host) ──pair code / QR──► WhatsApp
