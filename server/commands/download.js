@@ -23,7 +23,7 @@ async function songCarousel(ctx, results) {
     const content = {
         viewOnceMessage: { message: { interactiveMessage: IP.create({
             body: IP.Body.create({ text: `🎵 *SONG — ${results.length} results*\n\n👉 Swipe a thumbnail, tap how you want it.` }),
-            footer: IP.Footer.create({ text: 'RCD X MINI • YOUTUBE' }),
+            footer: IP.Footer.create({ text: 'LOD X MINI • YOUTUBE' }),
             carouselMessage: IP.CarouselMessage.create({ cards, messageVersion: 1 })
         }) } }
     };
