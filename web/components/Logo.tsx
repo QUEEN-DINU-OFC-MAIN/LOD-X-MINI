@@ -23,7 +23,7 @@ export default function Logo({
       {mark}
       <span className="flex flex-col leading-none">
         <span className="logo-word text-[15px] font-extrabold tracking-[0.16em] text-white">
-          RCD&nbsp;X
+          LOD&nbsp;X
         </span>
         <span className="text-[9px] font-bold tracking-[0.42em] text-emerald-400/90">
           MINI&nbsp;BOT
