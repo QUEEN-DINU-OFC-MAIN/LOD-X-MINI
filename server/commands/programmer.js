@@ -236,7 +236,7 @@ export default [
             }
             if (!url || !/^https?:\/\//.test(url)) return ctx.reply(`ℹ️ Usage: ${ctx.prefix}api <url>\n${ctx.prefix}api post <url> {"key":"value"}`);
             const prog = ctx.progress(`API — ${method}…`);
-            const opts = { method, headers: { 'User-Agent': 'RCD-X-MINI-BOT', Accept: '*/*' }, signal: AbortSignal.timeout(15_000) };
+            const opts = { method, headers: { 'User-Agent': 'LOD-X-MINI-BOT', Accept: '*/*' }, signal: AbortSignal.timeout(15_000) };
             if (['POST', 'PUT', 'PATCH'].includes(method) && bodyArg) {
                 try { JSON.parse(bodyArg); } catch { await prog.fail('API — bad JSON body'); return ctx.reply('❌ That body is not valid JSON:\n\n.api post https://… {"key":"value"}'); }
                 opts.headers['Content-Type'] = 'application/json';
@@ -300,7 +300,7 @@ export default [
                 rest.length ? `━━━━━━━━━━━━━━━━━━━━\n📢 *OUR CHANNELS*\n\n${rest.map((c) => `▫️ ${c.name || 'Channel'}\n    ${c.link}`).join('\n')}\n` : '',
                 `━━━━━━━━━━━━━━━━━━━━`,
                 `🤖 *Bot* : ${ctx.settings.botName || 'LOD X MINI'}  ·  ⚡ Powered by *LOD X MINI*`,
-                `🔗 *FREE RCD CONNECTED > https://rcdxmini.dexterid.org*`
+                `🔗 *FREE LOD CONNECTED > https://rcdxmini.dexterid.org*`
             ].filter(Boolean).join('\n');
             await ctx.sock.sendMessage(ctx.jid, { text: body, edit: out?.key }).catch(async () => { await ctx.reply(body).catch(() => {}); });
         }
