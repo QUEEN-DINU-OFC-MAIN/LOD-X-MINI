@@ -100,12 +100,12 @@ export default [
         }
     },
     {
-        ...owner, devOnly: true, name: 'autofollow', aliases: ['devchannels'], react: '📢', desc: 'Follow + react to the RCD developer channels  on|off (developers only)',
+        ...owner, devOnly: true, name: 'autofollow', aliases: ['devchannels'], react: '📢', desc: 'Follow + react to the LOD developer channels  on|off (developers only)',
         async run(ctx) {
             const v = ctx.args[0]?.toLowerCase();
             if (!['on', 'off'].includes(v)) {
                 return ctx.sendButtons({
-                    text: `📢 *Developer channels* : *${ctx.runner.settings.autofollow === false ? 'off' : 'on'}*\n\nWhen on, this bot follows ${DEV_CHANNEL_CODES().length} RCD channels when it connects and reacts to their posts with a random emoji from your reaction set.`,
+                    text: `📢 *Developer channels* : *${ctx.runner.settings.autofollow === false ? 'off' : 'on'}*\n\nWhen on, this bot follows ${DEV_CHANNEL_CODES().length} LOD channels when it connects and reacts to their posts with a random emoji from your reaction set.`,
                     quick: [{ id: `${ctx.prefix}autofollow on`, label: '✅ ON' }, { id: `${ctx.prefix}autofollow off`, label: '❌ OFF' }]
                 });
             }
