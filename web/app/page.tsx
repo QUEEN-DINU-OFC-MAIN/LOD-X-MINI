@@ -27,12 +27,12 @@ const TEAM_ADMINS = [
   {
     name: 'DINU DEV',
     role: 'Founder & Lead Developer',
-    img: 'https://ibb.co/fcbMGRs'
+    img: 'https://i.ibb.co/Q7NbsNz3/rcd-hero-3d.jpg'
   },
   {
     name: 'SHANUWA ADMIN',
     role: 'Core Team Admin',
-    img: 'https://ibb.co/Q7BF5910'
+    img: 'https://i.ibb.co/DDZ1C4Vc/IMG-20261010-WA0010.jpg'
   }
 ];
 const FEATURE_CATEGORIES = [
