@@ -212,7 +212,7 @@ export default function HomePage() {
         <div className="grid items-center gap-6 md:grid-cols-[260px_1fr]">
           <div className="mx-auto w-full max-w-[250px] overflow-hidden rounded-2xl border border-white/10 bg-black/50 shadow-xl">
             <img
-              src="/rcd-md-banner.webp"
+              src="/rcd-hero-3d.webp"
               alt="LOD MD MINI BOT Emblem"
               width={500}
               height={500}
