@@ -27,7 +27,7 @@ export default function AboutPage() {
         <div className="grid items-center gap-6 md:grid-cols-[240px_1fr]">
           <div className="mx-auto w-full max-w-[220px] overflow-hidden rounded-2xl border border-white/10 bg-black/40 shadow-xl">
             <img
-              src="/lod-md-banner.webp"
+              src="/rcd-md-banner.webp"
               alt="LOD X MINI Emblem"
               width={440}
               height={440}
