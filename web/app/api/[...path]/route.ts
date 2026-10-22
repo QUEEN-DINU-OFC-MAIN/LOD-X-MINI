@@ -37,7 +37,7 @@ async function handleStats() {
   let workersOnline = 0;
   let capacity = 0;
   let rssMb = 0;
-  let brand = 'RCD X MINI';
+  let brand = 'LOD X MINI';
   let onlineServers = 0;
 
   const serverStatuses = servers.map((srv, idx) => {
