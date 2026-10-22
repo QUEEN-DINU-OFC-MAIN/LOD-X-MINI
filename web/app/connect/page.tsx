@@ -386,7 +386,7 @@ export default function Connect() {
                     <ShieldCheck className="h-3.5 w-3.5 text-emerald-400" /> Protected Connection
                   </span>
                   <span>•</span>
-                  <span>FREE RCD CONNECTED &gt; rcdxmini.dexterid.org</span>
+                  <span>FREE LOD CONNECTED &gt; lodxmini.vercel.app</span>
                 </div>
               </>
             )}
