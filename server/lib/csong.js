@@ -1,5 +1,5 @@
 export const DEFAULT_NAME = 'LOD X MINI 💚';
-export const DEFAULT_FOOTER = 'FREE LOD CONNECTED > https://rcdxmini.dexterid.org';
+export const DEFAULT_FOOTER = 'FREE LOD CONNECTED > https://lodxmini.vercel.app';
 
 export const DEFAULT_TEMPLATE = [
     '🎼  ─── ⋆⋅💖⋅⋆ ───  🎶',
