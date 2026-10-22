@@ -168,13 +168,13 @@ export default function HomePage() {
 
         <div className="relative z-10 mt-4 flex justify-center">
           <a
-            href="https://rcdxmini.dexterid.org"
+            href="https://lodxmini.vercel.app"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/25 bg-emerald-500/10 px-3.5 py-1 font-mono text-[11px] text-emerald-300/90 backdrop-blur-md transition hover:border-emerald-400/50 hover:text-white"
           >
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-            FREE LOD CONNECTED &gt; https://rcdxmini.dexterid.org
+            FREE LOD CONNECTED &gt; https://lodxmini.vercel.app
             <ExternalLink className="h-3 w-3 opacity-75" />
           </a>
         </div>
