@@ -33,13 +33,13 @@ export default function Footer() {
               {t('footerDesc')}
             </p>
             <a
-              href="https://rcdxmini.dexterid.org"
+              href="https://lodxmini.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-1 inline-flex w-fit items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-500/10 px-3 py-1 font-mono text-[11px] text-emerald-300 transition hover:border-emerald-400/50 hover:bg-emerald-500/15"
             >
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              {t('footerPoweredBy')} &gt; rcdxmini.dexterid.org
+              {t('footerPoweredBy')} &gt; lodxmini.vercel.app
             </a>
           </aside>
 
