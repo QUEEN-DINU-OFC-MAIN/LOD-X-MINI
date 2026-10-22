@@ -324,7 +324,7 @@ export default function Panel() {
         <Logo size={42} withWordmark={false} />
         <div className="min-w-[10rem] flex-1">
           <h1 className="truncate text-lg font-extrabold text-white sm:text-xl">
-            {String(me.values.botName || "RCD X MINI")}
+            {String(me.values.botName || "LOD X MINI")}
           </h1>
           <p className="font-mono text-xs text-emerald-300">+{me.pn || me.number}</p>
         </div>
