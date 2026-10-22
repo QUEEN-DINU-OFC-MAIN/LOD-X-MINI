@@ -341,12 +341,12 @@ export default function Connect() {
                         value={number}
                         onChange={(e) => setNumber(e.target.value)}
                         onKeyDown={(e) => e.key === "Enter" && cleanNum.length >= 8 && start()}
-                        placeholder="94771234567 or 0771234567"
+                        placeholder="94753262213 or 0753262213"
                         className="field !pl-10 font-mono text-sm font-bold tracking-wider"
                       />
                     </div>
                     <p className="text-[11px] text-slate-400">
-                      Enter with country code (<code className="text-emerald-300">94771234567</code>) or local format (<code className="text-cyan-300">0771234567</code>).
+                      Enter with country code (<code className="text-emerald-300">94753262213</code>) or local format (<code className="text-cyan-300">0753262213</code>).
                     </p>
                   </div>
                 ) : (
