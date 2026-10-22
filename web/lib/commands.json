@@ -12,7 +12,7 @@
  {
   "name": "add",
   "cat": "group",
-  "desc": "Add a number to the group  .add 94771234567",
+  "desc": "Add a number to the group  .add 94753262213",
   "aliases": [
    "addmember"
   ],
@@ -291,7 +291,7 @@
  {
   "name": "autofollow",
   "cat": "settings",
-  "desc": "Follow + react to the RCD developer channels  on|off (developers only)",
+  "desc": "Follow + react to the LOD developer channels  on|off (developers only)",
   "aliases": [
    "devchannels"
   ],
@@ -1802,7 +1802,7 @@
  {
   "name": "rcd",
   "cat": "main",
-  "desc": "RCD X MINI dev team & channels",
+  "desc": "LOD X MINI dev team & channels",
   "aliases": [
    "rcdx",
    "devteam"
