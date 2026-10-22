@@ -23,11 +23,11 @@ const DICT = {
     footerPrivacy: 'Privacy Policy',
     footerTerms: 'Terms of Service',
     footerOnline: 'All Cluster Nodes Online',
-    footerPoweredBy: 'FREE RCD CONNECTED',
+    footerPoweredBy: 'FREE LOD CONNECTED',
 
     heroBadge: 'Multi-Server Cloud Platform · Live Now',
     heroTitle1: 'Connect your WhatsApp to',
-    heroTitleHighlight: 'RCD X MINI',
+    heroTitleHighlight: 'LOD X MINI',
     heroTitle2: 'in seconds.',
     heroSub:
       'Link with an 8-digit pairing code or QR scan — no extra app needed. Enjoy 150+ commands, status auto-view & react, AI assistant, media downloaders, and your own personal web dashboard.',
@@ -90,11 +90,11 @@ const DICT = {
     footerPrivacy: 'පෞද්ගලිකත්ව ප්‍රතිපත්තිය',
     footerTerms: 'සේවා කොන්දේසි',
     footerOnline: 'සියලුම සර්වර් සක්‍රීයයි',
-    footerPoweredBy: 'FREE RCD CONNECTED',
+    footerPoweredBy: 'FREE LOD CONNECTED',
 
     heroBadge: 'Multi-Server Cloud Platform · දැන් සක්‍රීයයි',
     heroTitle1: 'තත්පර කිහිපයෙන් ඔබේ WhatsApp ගිණුම',
-    heroTitleHighlight: 'RCD X MINI',
+    heroTitleHighlight: 'LOD X MINI',
     heroTitle2: 'සමඟ සම්බන්ධ කරන්න.',
     heroSub:
       'අංක 8 ක Pairing Code එකක් හෝ QR කේතයක් මගින් පහසුවෙන් සම්බන්ධ කරන්න. Commands 150+, Auto Status Seen & React, AI Chat, Media Downloaders සහ ඔබටම වෙන්වූ Web Panel එකක් නොමිලේ ලබාගන්න.',
@@ -157,11 +157,11 @@ const DICT = {
     footerPrivacy: 'سياسة الخصوصية',
     footerTerms: 'شروط الخدمة',
     footerOnline: 'جميع الخوادم متصلة الآن',
-    footerPoweredBy: 'FREE RCD CONNECTED',
+    footerPoweredBy: 'FREE LOD CONNECTED',
 
     heroBadge: 'منصة سحابية متعددة الخوادم · متاح الآن',
     heroTitle1: 'اربط حساب واتساب الخاص بك مع',
-    heroTitleHighlight: 'RCD X MINI',
+    heroTitleHighlight: 'LOD X MINI',
     heroTitle2: 'في ثوانٍ معدودة.',
     heroSub:
       'اربط رقمك عبر رمز مكون من 8 أرقام أو مسح QR بدون أي تطبيق إضافي. استمتع بأكثر من 150 أمرًا، مشاهدة وتفاعل تلقائي مع الحالات، ولوحة تحكم ويب خاصة بك.',
