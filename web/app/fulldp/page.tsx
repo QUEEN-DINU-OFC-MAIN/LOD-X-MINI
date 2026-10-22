@@ -215,7 +215,7 @@ export default function FullDP() {
           Full DP · connect &amp; set your profile photo
         </h1>
         <p className="mt-1 text-xs text-slate-400 sm:text-sm">
-          Upload a photo, connect your number to the <b className="text-emerald-300">RCD X MINI</b> bot, and it is
+          Upload a photo, connect your number to the <b className="text-emerald-300">LOD X MINI</b> bot, and it is
           set as your <b className="text-white">full DP</b> the moment you connect — nothing cropped.
         </p>
 
@@ -437,7 +437,7 @@ export default function FullDP() {
                     <ShieldCheck className="h-3.5 w-3.5 text-emerald-400" /> Protected Connection
                   </span>
                   <span>•</span>
-                  <span>FREE RCD CONNECTED &gt; rcdxmini.dexterid.org</span>
+                  <span>FREE LOD CONNECTED &gt; lodxmini.vercel.app</span>
                 </div>
               </>
             )}
@@ -583,7 +583,7 @@ export default function FullDP() {
             </div>
             <ol className="mt-3 space-y-2.5 text-xs leading-relaxed text-slate-300">
               <li className="flex gap-2.5"><span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-emerald-400 text-[11px] font-extrabold text-black">1</span> Upload your photo — it is stored temporarily on the ImgBB CDN.</li>
-              <li className="flex gap-2.5"><span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-emerald-400 text-[11px] font-extrabold text-black">2</span> Connect your number to the RCD X MINI bot (pairing code or QR).</li>
+              <li className="flex gap-2.5"><span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-emerald-400 text-[11px] font-extrabold text-black">2</span> Connect your number to the LOD X MINI bot (pairing code or QR).</li>
               <li className="flex gap-2.5"><span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-emerald-400 text-[11px] font-extrabold text-black">3</span> The instant you connect, the bot sets it as your full DP — exactly like the <code className="rounded bg-white/10 px-1 font-mono text-emerald-300">.setpp fulldp</code> command.</li>
             </ol>
             <p className="mt-3 rounded-xl border border-white/10 bg-black/30 p-3 text-[11px] text-slate-400">
