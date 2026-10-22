@@ -93,7 +93,7 @@ export default function PhoneMock({ className = "" }: { className?: string }) {
                   {L.hi} {L.line}
                 </div>
                 <div className="mt-1.5 font-mono text-[9.5px] text-emerald-400/90">
-                  &gt; LOD X MD • FREE LOD CONNECTED &gt; https://rcdxmini.dexterid.org
+                  &gt; LOD X MD • FREE LOD CONNECTED &gt; https://lodxmini.vercel.app
                 </div>
               </div>
               <div
