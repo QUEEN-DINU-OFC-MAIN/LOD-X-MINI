@@ -63,7 +63,7 @@ export default function PrivacyPage() {
           Privacy Policy · රහස්‍යතා ප්‍රතිපත්තිය
         </h1>
         <p className="mt-1.5 text-xs text-slate-400 sm:text-sm">
-          Clear, transparent rules on how RCD X MINI protects your privacy in English and Sinhala.
+          Clear, transparent rules on how LOD X MINI protects your privacy in English and Sinhala.
         </p>
 
         <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-3">
