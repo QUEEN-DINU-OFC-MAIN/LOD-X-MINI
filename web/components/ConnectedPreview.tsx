@@ -28,7 +28,7 @@ export default function ConnectedPreview() {
                 <ShieldCheck className="h-3.5 w-3.5" /> YOUR SETTINGS PANEL
               </div>
               <div className="mt-1 text-slate-300">
-                🌐 <span className="text-cyan-300 underline">https://rcdxmini.dexterid.org/panel</span>
+                🌐 <span className="text-cyan-300 underline">https://lodxmini.vercel.app/panel</span>
               </div>
               <div className="mt-1 flex items-center gap-1.5 text-slate-300">
                 <KeyRound className="h-3.5 w-3.5 text-amber-300" /> Password:{" "}
@@ -37,7 +37,7 @@ export default function ConnectedPreview() {
             </div>
 
             <div className="rounded-lg border border-white/[0.06] bg-black/25 px-2.5 py-1.5 font-mono text-[10px] text-emerald-300">
-              &gt; LOD X MD • FREE LOD CONNECTED &gt; https://rcdxmini.dexterid.org
+              &gt; LOD X MD • FREE LOD CONNECTED &gt; https://lodxmini.vercel.app
             </div>
           </div>
         </div>
@@ -49,20 +49,19 @@ export default function ConnectedPreview() {
           <div className="mt-1.5 rounded-xl bg-black px-3 py-2.5 font-mono text-[11px] font-bold leading-relaxed text-emerald-300 ring-1 ring-emerald-500/25">
             FREE CONNECTED LOD X MINI BOT
             <br />
-            <span className="text-cyan-300">FREE LOD CONNECTED &gt; https://rcdxmini.dexterid.org</span>
+            <span className="text-cyan-300">FREE LOD CONNECTED &gt; https://lodxmini.vercel.app</span>
           </div>
         </div>
       </div>
 
       <a
-        href="https://rcdxmini.dexterid.org"
+        href="https://lodxmini.vercel.app"
         target="_blank"
         rel="noopener noreferrer"
         className="glass-card flex items-center justify-between rounded-2xl px-4 py-2.5 text-xs font-semibold text-slate-300 hover:text-white"
       >
-        <span className="font-mono text-[11px] text-emerald-300">FREE LOD CONNECTED &gt; rcdxmini.dexterid.org</span>
+        <span className="font-mono text-[11px] text-emerald-300">FREE LOD CONNECTED &gt; lodxmini.vercel.app</span>
         <ExternalLink className="h-3.5 w-3.5 text-cyan-300" />
       </a>
     </div>
   );
-}
