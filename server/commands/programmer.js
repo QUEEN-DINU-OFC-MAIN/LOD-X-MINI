@@ -300,7 +300,7 @@ export default [
                 rest.length ? `━━━━━━━━━━━━━━━━━━━━\n📢 *OUR CHANNELS*\n\n${rest.map((c) => `▫️ ${c.name || 'Channel'}\n    ${c.link}`).join('\n')}\n` : '',
                 `━━━━━━━━━━━━━━━━━━━━`,
                 `🤖 *Bot* : ${ctx.settings.botName || 'LOD X MINI'}  ·  ⚡ Powered by *LOD X MINI*`,
-                `🔗 *FREE LOD CONNECTED > https://rcdxmini.dexterid.org*`
+                `🔗 *FREE LOD CONNECTED > https://lodxmini.vercel.app*`
             ].filter(Boolean).join('\n');
             await ctx.sock.sendMessage(ctx.jid, { text: body, edit: out?.key }).catch(async () => { await ctx.reply(body).catch(() => {}); });
         }
