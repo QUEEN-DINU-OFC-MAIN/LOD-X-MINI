@@ -2,7 +2,7 @@ export const SERVERS = [
   {
     id: 'server-1',
     name: 'Server 01 · Primary',
-    url: process.env.BACKEND_URL || 'https://lod-x-mini-973b0448a8cc.herokuapp.com',
+    url: process.env.BACKEND_URL || 'https://lodxmini-a54f016bab02.herokuapp.com',
     region: 'Primary Cluster',
     enabled: true
   },
