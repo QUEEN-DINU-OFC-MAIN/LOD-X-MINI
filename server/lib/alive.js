@@ -51,7 +51,7 @@ export function aliveHtml(d) {
 </div>
 <div class="grid">${pill('Mode', d.mode)}${pill('Prefix', d.prefix)}${pill('Commands', d.commands)}${pill('Memory', d.memory)}${pill('Language', d.lang)}${pill('Node', d.node)}</div>
 <div class="hello">Hello <b>${esc(d.user, 24)}</b>, your bot is awake. Send <b>${esc(d.prefix, 3)}menu</b> to begin.</div>
-<div class="foot">Powered by <span>LOD X MINI</span><div style="margin-top:4px;color:#34d399;letter-spacing:1px;text-transform:none">FREE LOD CONNECTED &gt; https://rcdxmini.dexterid.org</div></div>
+<div class="foot">Powered by <span>LOD X MINI</span><div style="margin-top:4px;color:#34d399;letter-spacing:1px;text-transform:none">FREE LOD CONNECTED &gt; https://lodxmini.vercel.app</div></div>
 </div></div>
 <script>
 (function () {
