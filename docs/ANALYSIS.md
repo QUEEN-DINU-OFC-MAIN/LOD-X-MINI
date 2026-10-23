@@ -266,7 +266,7 @@ Fix (key stays the LID — no migration, no login risk; the real number rides al
 
 - `server/lib/menu.js` buildCard: the category command list moved from the header into the BODY so it
   renders on BOTH phone and web; each card also carries quick buttons (ALIVE/PING/TEXT/OWNER) plus a
-  `cta_url` WEBSITE button (https://rcdxmini.dexterid.org).
+  `cta_url` WEBSITE button (https://lodxmini.vercel.app).
 - `server/lib/ui.js` buildButtons: every button message now appends a `cta_url` WEBSITE button.
 - `server/commands/download.js` `.song`: when buttons are on it searches YouTube (P.ytSearch, 6) and
   sends a swipe carousel of results; each card offers AUDIO / VOICE / VIDEO quick buttons + a
@@ -347,7 +347,7 @@ detail in body) and .img (header `🖼️ n`, query+file in body).
 ## 21. Branding cleanup, per-category banners, speed, defaults (v42)
 
 Five fixes in one batch:
-- **Footer / branding**: every message now ends with `FREE RCD CONNECTED > https://rcdxmini.dexterid.org`
+- **Footer / branding**: every message now ends with `FREE RCD CONNECTED > https://lodxmini.vercel.app`
   only. The old "RCD X MD" footer piece is gone from config.footer/poweredBy; listTitle is
   `RCD X MINI FREE BOT`. All stray "RCD X MD" strings in code (programmer/stickers/alive/antidelete)
   replaced with "RCD X MINI".

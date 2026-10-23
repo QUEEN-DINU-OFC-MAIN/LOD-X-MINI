@@ -25,7 +25,7 @@ Change every bot setting from your phone.
 💡 Or send \`${prefix}web\` to your bot for a link that needs no password.
 🗣️ The bot speaks your language automatically — change it with \`${prefix}lang\`.
 
-> *FREE RCD CONNECTED > https://rcdxmini.dexterid.org*`,
+> *FREE RCD CONNECTED > https://lodxmini.vercel.app*`,
     live: ({ brand, prefix }) =>
 `🟢 *${brand}* is now *LIVE!*
 
@@ -33,7 +33,7 @@ Change every bot setting from your phone.
 🌐 Send \`${prefix}web\` for your settings panel link.
 🗣️ Send \`${prefix}lang\` to change the language.
 
-> *FREE RCD CONNECTED > https://rcdxmini.dexterid.org*`
+> *FREE RCD CONNECTED > https://lodxmini.vercel.app*`
 };
 
 const SI = {
@@ -61,7 +61,7 @@ Bot එකේ හැම setting එකක්ම ෆෝන් එකෙන්ම 
 💡 නැත්නම් Bot එකට \`${prefix}web\` යවන්න — password එකක් නැතුව කෙලින්ම ඇතුල් වෙන link එකක් එනවා.
 🗣️ Bot ඔයාගේ භාෂාවෙන් ඉබේම කතා කරනවා — \`${prefix}lang\` වලින් වෙනස් කරන්න.
 
-> *FREE RCD CONNECTED > https://rcdxmini.dexterid.org*`,
+> *FREE RCD CONNECTED > https://lodxmini.vercel.app*`,
     live: ({ brand, prefix }) =>
 `🟢 *${brand}* දැන් ක්‍රියාත්මකයි!
 
@@ -69,7 +69,7 @@ Bot එකේ හැම setting එකක්ම ෆෝන් එකෙන්ම 
 🌐 Settings panel link එක සඳහා \`${prefix}web\` යවන්න.
 🗣️ භාෂාව වෙනස් කරන්න \`${prefix}lang\` යවන්න.
 
-> *FREE RCD CONNECTED > https://rcdxmini.dexterid.org*`
+> *FREE RCD CONNECTED > https://lodxmini.vercel.app*`
 };
 
 const pick = (lang) => (lang === 'si' ? SI : EN);

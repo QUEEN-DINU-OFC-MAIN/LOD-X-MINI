@@ -60,7 +60,7 @@ export default function ConnectedPreview() {
         rel="noopener noreferrer"
         className="glass-card flex items-center justify-between rounded-2xl px-4 py-2.5 text-xs font-semibold text-slate-300 hover:text-white"
       >
-        <span className="font-mono text-[11px] text-emerald-300">FREE LOD CONNECTED &gt; rcdxmini.dexterid.org</span>
+        <span className="font-mono text-[11px] text-emerald-300">FREE LOD CONNECTED &gt; lodxmini.vercel.app</span>
         <ExternalLink className="h-3.5 w-3.5 text-cyan-300" />
       </a>
     </div>

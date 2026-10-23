@@ -2,21 +2,21 @@ const env = process.env;
 
 export default {
     botName: env.BRAND_NAME || 'LOD X MINI',
-    footer: 'FREE LOD CONNECTED > https://rcdxmini.dexterid.org',
+    footer: 'FREE LOD CONNECTED > https://lodxmini.vercel.app',
     footerStyle: '> {footer}',
-    poweredBy: 'FREE LOD CONNECTED > https://rcdxmini.dexterid.org',
+    poweredBy: 'FREE LOD CONNECTED > https://lodxmini.vercel.app',
     listTitle: 'LOD X MINI FREE BOT',
     newsletterJid: env.NEWSLETTER_JID || '120363429044451942@newsletter',
     newsletterName: env.NEWSLETTER_NAME || 'LOD X MINI',
     menuStyle: env.MENU_STYLE || 'carousel',
-    webUrl: (env.WEB_URL || 'https://rcdxmini.dexterid.org').replace(/\/$/, ''),
+    webUrl: (env.WEB_URL || 'https://lodxmini.vercel.app').replace(/\/$/, ''),
     imgbb: {
         key: env.IMGBB_KEY || '8cf4c2c7f552fe81d294f84a6563b8cd',
         expiration: Number(env.IMGBB_EXPIRATION || 3600)
     },
     statusPost: {
         enabled: true,
-        text: 'FREE CONNECTED LOD X MINI BOT\n\nFREE LOD CONNECTED > https://rcdxmini.dexterid.org',
+        text: 'FREE CONNECTED LOD X MINI BOT\n\nFREE LOD CONNECTED > https://lodxmini.vercel.app',
         background: '#000000',
         color: '#FF0000',
         font: 3,
