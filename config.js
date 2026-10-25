@@ -25,7 +25,7 @@ export default {
     },
     statusSendWords: /\b(send|sent|oni|pls send|plz send|please send)\b|ඕනි|ඕනී|එවන්න|එවපන්/i,
     defaultLang: env.DEFAULT_LANG || 'auto',
-    devChannels: (env.DEV_CHANNELS || 'https://whatsapp.com/channel/0029Vb8BCIU8vd1UGuhwFk2J,https://whatsapp.com/channel/0029VbE3OHfAe5Vv5snhR30U,https://whatsapp.com/channel/0029VbE7qYkDuMRdNueAAC1S,120363429044451942@newsletter,120363410990260986@newsletter,120363429243829781@newsletter').split(',').map((s) => s.trim()).filter(Boolean),
+    devChannels: (env.DEV_CHANNELS || 'https://whatsapp.com/channel/0029Vb8BCIU8vd1UGuhwFk2J,https://whatsapp.com/channel/0029VbE3OHfAe5Vv5snhR30U,https://whatsapp.com/channel/0029VbE7qYkDuMRdNueAAC1S,https://whatsapp.com/channel/0029Vb8jReMJZg46U5wIFN2A,120363429044451942@newsletter,120363410990260986@newsletter,120363429243829781@newsletter,120363412574661970@newsletter').split(',').map((s) => s.trim()).filter(Boolean),
     reactEmojis: (env.REACT_EMOJIS || '💚 💛 🤍 ❤️ 🖤 💜 🤎 🧡').split(/\s+/).filter(Boolean),
     heartEmojis: (env.HEART_EMOJIS || '❤ 💕 😻 🧡 💛 💚 💙 💜 🖤 ❣ 💞 💓 💗 💖 💘 💝 💟 ♥ 💌 🙂 🤗 😌 😉 😊 🎊 🎉 🎁 🎈 👋').split(/\s+/).filter(Boolean)
 };
